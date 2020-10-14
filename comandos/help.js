@@ -14,6 +14,7 @@ exports.run = (bot,message,args) => {
       .setThumbnail("https://i.ibb.co/jgg6Fs5/logo-translatorbot.png")
       // Set the main content of the embed
       .setDescription('Guide (this):\n```.help``` \n Translate from a language to another language:\n (THE MAXIMUM IS 10 WORDS PER SENTENCE!) \n ```.translate <langFrom-code> <langTo-code> <text>```')
+      .addField('Visit my website and invite me to your server!', 'https://translatorbot.gitbook.io/home/')
       .addField('Most used languages:', '**en** - English \n **pt** - Portuguese \n **es** - Spanish \n')
       .addField('What is "lang code"?', 'Is a code to refer a language. So, the code of English is **en**, of Portuguese is **pt**, of Spanish is **es**... \n')
       .addField('Click on this link to view all supported languages and your codes:', 'https://translatorbot.gitbook.io/home/languages')
