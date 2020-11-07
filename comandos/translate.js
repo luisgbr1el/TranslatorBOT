@@ -6,8 +6,8 @@ const translate = require('translate-google');
 
 exports.run = (bot,message,args) => {
 
-if (!args[0] || args[12] || args[13] || args[14] || args[15] || args[16]) {
-	message.reply('use **.translate <Language> <toLanguage> <text>** to translate. The maximum is 10 words per sentence. Type **.help** to view the supported languages.')
+if (!args[0] || args[22] || args[23] || args[24] || args[25] || args[26] || args[27] || args[28] || args[29] || args[30]) {
+	message.reply('use **.translate <Language> <toLanguage> <text>** to translate. The maximum is 20 words per sentence. Type **.help** to view the supported languages.')
 } else {
 	// to format
 if (!args[1]) {
@@ -41,6 +41,36 @@ if (!args[10]) {
 }
 if (!args[11]) {
 	args[11] = '';
+}
+if (!args[12]) {
+	args[12] = '';
+}
+if (!args[13]) {
+	args[13] = '';
+}
+if (!args[14]) {
+	args[14] = '';
+}
+if (!args[15]) {
+	args[15] = '';
+}
+if (!args[16]) {
+	args[16] = '';
+}
+if (!args[17]) {
+	args[17] = '';
+}
+if (!args[18]) {
+	args[18] = '';
+}
+if (!args[19]) {
+	args[19] = '';
+}
+if (!args[20]) {
+	args[20] = '';
+}
+if (!args[21]) {
+	args[21] = '';
 }
 
  // available languages
@@ -793,7 +823,7 @@ if (args[1] == 'zu') {
 	var lingua2 = langs.zu;
 }
 
-var texto = args[2] + ' ' + args[3] + ' ' + args[4] + ' ' + args[5] + ' ' + args[6] + ' ' + args[7] + ' ' + args[8] + ' ' + args[9]+ ' ' + args[10]+ ' ' + args[11];		
+var texto = args[2] + ' ' + args[3] + ' ' + args[4] + ' ' + args[5] + ' ' + args[6] + ' ' + args[7] + ' ' + args[8] + ' ' + args[9]+ ' ' + args[10]+ ' ' + args[11]+ ' ' + args[12]+ ' ' + args[13]+ ' ' + args[14]+ ' ' + args[15]+ ' ' + args[16]+ ' ' + args[17]+ ' ' + args[18]+ ' ' + args[19]+ ' ' + args[20]+ ' ' + args[21];		
 translate(texto, {from: args[0], to: args[1]}).then(res => {
 	const traducao = new MessageEmbed()
 	.setTitle(`TRANSLATOR`)
@@ -802,7 +832,7 @@ translate(texto, {from: args[0], to: args[1]}).then(res => {
 	.setColor('#03C48A')
 	.addField(`From ${lingua1}:`, texto)
 	.addField(`To ${lingua2}:`, res)
-	.setFooter(`TranslatorBOT v1.0.0 | 2020`); 
+	.setFooter(`TranslatorBOT v1.1.0 | 2020`); 
     message.channel.send(traducao);
 }).catch(err => {
     console.error(err)

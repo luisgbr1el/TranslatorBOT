@@ -21,21 +21,10 @@ fs.readdir("./comandos/", (err, files) => {
 
 	bot.on('ready', () => {
 		var servers = bot.guilds.cache.size;
-  console.log('Estou pronto para ser usado! (^-^)');
-  let activNum = 0;
+    	console.log('Estou pronto para ser usado! (^-^)');
+		bot.user.setActivity(`.help | ${servers} servers`, {type: "LISTENING"});
   
-  setInterval(function(){
-  	if (activNum === 0) {
-  		bot.user.setActivity(".help for a guide / .help para um guia / .help para instrucciones.", {type: "LISTENING"});
-  		activNum = 1;
 
-  	} else if(activNum === 1) {
-  		  		bot.user.setActivity(`${servers} servers.`, {type: "STREAMING", url: "https://twitch.tv/luisgabriel539"});
-  		activNum = 0;
-  	}
-
-
-  }, 10 * 1000)
 });
 
 // Create an event listener for messages
