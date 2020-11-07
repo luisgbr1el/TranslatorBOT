@@ -1,11 +1,11 @@
 # TranslatorBOT
 
 <h2>PT-BR</h2>
-Um bot para o Discord que traduz frases com até 10 palavras. <br>
+Um bot para o Discord que traduz frases com até 20 palavras. <br>
 
 <img src="https://i.ibb.co/bQ19LLf/image.png">
 
-v1.0.0
+v1.1.0
 
 Usa a package <a href="https://www.npmjs.com/package/translate-google">translate-google</a> do <a href="https://www.npmjs.com/">npm</a> e Node.js.
 
@@ -16,11 +16,11 @@ Quer convidar o bot para seu servidor? <a href="https://discord.com/api/oauth2/a
 
 <h2>EN</h2>
 
-A Discord bot that translate sentences with the limit of 10 words. <br>
+A Discord bot that translate sentences with the limit of 20 words. <br>
 
 <img src="https://i.ibb.co/bQ19LLf/image.png">
 
-v1.0.0
+v1.1.0
 
 He uses the package <a href="https://www.npmjs.com/package/translate-google">translate-google</a> of <a href="https://www.npmjs.com/">npm</a> and Node.js.
 
