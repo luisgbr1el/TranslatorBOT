@@ -1,4 +1,7 @@
 # TranslatorBOT
+<a href="https://top.gg/bot/745021822361141278">
+    <img src="https://top.gg/api/widget/745021822361141278.svg" alt="Translator" />
+</a>
 
 <h2>PT-BR</h2>
 Um bot para o Discord que traduz frases com até 20 palavras. <br>
