@@ -3,7 +3,7 @@
     <img src="https://top.gg/api/widget/745021822361141278.svg" alt="Translator" />
 </a>
 
-<h2>PT-BR</h2>
+<h2>PT-BR 🇧🇷</h2>
 Um bot para o Discord que traduz frases com até 20 palavras. <br>
 
 <img src="https://i.ibb.co/VLYzN3R/pt-1.png" alt="pt-1" border="0">
@@ -17,7 +17,7 @@ Visite o <a href="https://translatorbot.gitbook.io/home/">website do bot</a> par
 Quer convidar o bot para seu servidor? <a href="https://discord.com/api/oauth2/authorize?client_id=745021822361141278&permissions=8&scope=bot">Clique aqui</a>.
 
 
-<h2>EN</h2>
+<h2>EN-US 🇺🇸</h2>
 
 A Discord bot that translate sentences with the limit of 20 words. <br>
 
