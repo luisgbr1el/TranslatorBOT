@@ -1,7 +1,10 @@
-# TranslatorBOT
+# Translator
+
 <a href="https://top.gg/bot/745021822361141278">
     <img src="https://top.gg/api/widget/745021822361141278.svg" alt="Translator" />
 </a>
+
+<h2> Sobre o bot </h2>
 
 <h2>PT-BR 🇧🇷</h2>
 
@@ -17,6 +20,7 @@ Visite o <a href="https://translatorbot.gitbook.io/home/">website do bot</a> par
 
 Quer convidar o bot para seu servidor? <a href="https://discord.com/api/oauth2/authorize?client_id=745021822361141278&permissions=8&scope=bot">Clique aqui</a>.
 
+<h2> About </h2>
 
 <h2>EN-US 🇺🇸</h2>
 
