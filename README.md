@@ -6,7 +6,7 @@
 <h2>PT-BR</h2>
 Um bot para o Discord que traduz frases com até 20 palavras. <br>
 
-<img src="https://i.ibb.co/bQ19LLf/image.png">
+<img src="https://i.ibb.co/VLYzN3R/pt-1.png" alt="pt-1" border="0">
 
 v1.1.0
 
@@ -21,7 +21,7 @@ Quer convidar o bot para seu servidor? <a href="https://discord.com/api/oauth2/a
 
 A Discord bot that translate sentences with the limit of 20 words. <br>
 
-<img src="https://i.ibb.co/bQ19LLf/image.png">
+<img src="https://i.ibb.co/F4Y4dWq/en-2.png" alt="en-2" border="0">
 
 v1.1.0
 
