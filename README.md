@@ -4,6 +4,7 @@
 </a>
 
 <h2>PT-BR 🇧🇷</h2>
+
 Um bot para o Discord que traduz frases com até 20 palavras. <br>
 
 <img src="https://i.ibb.co/VLYzN3R/pt-1.png" alt="pt-1" border="0">
