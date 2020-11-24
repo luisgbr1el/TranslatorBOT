@@ -7,7 +7,20 @@ const translate = require('translate-google');
 exports.run = (bot,message,args) => {
 
 if (!args[0] || args[22] || args[23] || args[24] || args[25] || args[26] || args[27] || args[28] || args[29] || args[30]) {
-	message.reply('use **.translate <Language> <toLanguage> <text>** to translate. The maximum is 20 words per sentence. Type **.help** to view the supported languages.')
+	const embed = new MessageEmbed()
+	.setTitle(`t.translate Helper`)
+      // Set the color of the embed
+      .setColor('#03C48A')
+      .setThumbnail("https://i.ibb.co/jgg6Fs5/logo-translatorbot.png")
+      // Set the main content of the embed
+      .setDescription('How to use the ``t.translate`` command.')
+      .addField('How to use?', 'use ``t.translate <Language> <toLanguage> <text>`` to translate. The maximum is 20 words per sentence.')
+      .addField('Example:', '```t.translate en pt Hey there!``` \n The result will be: \n **From English:**\n Hey There! \n **To Portuguese:**\n Olá!')
+      .addField('What is "lang code"?', 'Is a code to refer a language. So, the code of English is **en**, of Portuguese is **pt**, of Spanish is **es**... \n')
+      .addField('Click on this link to view all supported languages and your codes:', 'https://translatorbot.gitbook.io/home/languages')
+    // Send the embed to the same channel as the message
+      .setFooter('TranslatorBOT v1.2.0 | 2020');
+      message.channel.send(embed);
 } else {
 	// to format
 if (!args[1]) {
@@ -182,6 +195,9 @@ const langs = {
 }
 
 // args[0]
+if (args[0] == 'auto') {
+	var lingua1 = langs.auto;
+}
 if (args[0] == 'en') {
 	var lingua1 = langs.en;
 }
@@ -822,22 +838,27 @@ if (args[1] == 'yo') {
 if (args[1] == 'zu') {
 	var lingua2 = langs.zu;
 }
-
-var texto = args[2] + ' ' + args[3] + ' ' + args[4] + ' ' + args[5] + ' ' + args[6] + ' ' + args[7] + ' ' + args[8] + ' ' + args[9]+ ' ' + args[10]+ ' ' + args[11]+ ' ' + args[12]+ ' ' + args[13]+ ' ' + args[14]+ ' ' + args[15]+ ' ' + args[16]+ ' ' + args[17]+ ' ' + args[18]+ ' ' + args[19]+ ' ' + args[20]+ ' ' + args[21];		
+if (args[1] == 'auto') {
+	message.reply('is not possible translate from a language to Automatic!')
+} else {
+	var texto = args[2] + ' ' + args[3] + ' ' + args[4] + ' ' + args[5] + ' ' + args[6] + ' ' + args[7] + ' ' + args[8] + ' ' + args[9]+ ' ' + args[10]+ ' ' + args[11]+ ' ' + args[12]+ ' ' + args[13]+ ' ' + args[14]+ ' ' + args[15]+ ' ' + args[16]+ ' ' + args[17]+ ' ' + args[18]+ ' ' + args[19]+ ' ' + args[20]+ ' ' + args[21];		
 translate(texto, {from: args[0], to: args[1]}).then(res => {
 	const traducao = new MessageEmbed()
-	.setTitle(`TRANSLATOR`)
+	.setTitle(`Translating...`)
 	.setThumbnail("https://i.ibb.co/jgg6Fs5/logo-translatorbot.png")
 	.setDescription(`Asked by <@${message.author.id}> \n`)
 	.setColor('#03C48A')
-	.addField(`From ${lingua1}:`, texto)
-	.addField(`To ${lingua2}:`, res)
-	.setFooter(`TranslatorBOT v1.1.0 | 2020`); 
+	.addField(`From ${lingua1}:`, '``'+ texto + '``')
+	.addField(`To ${lingua2}:`, '``' +res + '    ``')
+	.addField('Click on this link to view all supported languages and your codes:', 'https://translatorbot.gitbook.io/home/languages')
+	.setFooter(`TranslatorBOT v1.2.0 | 2020`); 
     message.channel.send(traducao);
 }).catch(err => {
     console.error(err)
-    message.channel.send('Language unsupported or unrecognized. Type **.help** to view the supported languages.')
+    message.channel.send('Language unsupported or unrecognized. Type **t.help** to view the supported languages.')
 })
+}
+
 
 }
 
