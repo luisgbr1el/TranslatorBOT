@@ -10,9 +10,8 @@
 
 A Discord bot that translate sentences with the limit of 20 words. <br>
 
-<img src="https://i.ibb.co/F4Y4dWq/en-2.png" alt="en-2" border="0">
 
-v1.2.0
+**v1.2.0**
 
 He uses the package <a href="https://www.npmjs.com/package/translate-google">translate-google</a> of <a href="https://www.npmjs.com/">npm</a> and Node.js.
 
