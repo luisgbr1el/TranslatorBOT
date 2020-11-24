@@ -29,7 +29,7 @@ fs.readdir("./comandos/", (err, files) => {
 // UPDATE THE COUNTER ON A TIME PERIOD
 	bot.on('ready', () => {
 		setInterval(() => {
-        dbl.postStats(client.guilds.size, client.shards.Id, client.shards.total);
+        dbl.postStats(bot.guilds.size, bot.shards.Id, bot.shards.total);
   }, 1800000);
 		
 		var servers = bot.guilds.cache.size;
