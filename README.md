@@ -9,14 +9,16 @@
 <h2> About </h2>
 
 A Discord bot that translate sentences with the limit of 20 words. <br>
-
+Made by ```Luis Gabriel#7318```
 
 **v1.2.0**
+### 🤔 | What systems it use?
+It uses the package <a href="https://www.npmjs.com/package/translate-google">translate-google</a> of <a href="https://www.npmjs.com/">npm</a> and Node.js.
 
-He uses the package <a href="https://www.npmjs.com/package/translate-google">translate-google</a> of <a href="https://www.npmjs.com/">npm</a> and Node.js.
+### 🤔 | The bot has a website?
+YES! Visit the <a href="https://translatorbot.gitbook.io/home/">bot website</a>, there has a very well guide.
 
-Visit the <a href="https://translatorbot.gitbook.io/home/">bot website</a> to see how to use it.
+### 🤔 | How I can invite Translator to my server?
+Here is a link to <a href="https://discord.com/api/oauth2/authorize?client_id=745021822361141278&permissions=8&scope=bot">INVITE ME!</a>
 
-Do you want to invite him to your server? <a href="https://discord.com/api/oauth2/authorize?client_id=745021822361141278&permissions=8&scope=bot">Click here</a>.
-
-<h2>How to clone</h2>
+<h2>Compile Translator</h2>
