@@ -2,6 +2,8 @@
 
 
    <a href="https://ibb.co/XjWT7vx"><img src="https://i.ibb.co/8NmVrSg/logo-translatorbot.png" alt="logo-translatorbot" border="0" width="300px" height="300px"></a>
+   <script src="https://discordbotlist.com/widget/index.js" async></script>
+<dbl-widget bot-id="bot-translator-4314" centered></dbl-widget>
    <a href="https://top.gg/bot/745021822361141278">
    <img src="https://top.gg/api/widget/745021822361141278.svg" alt="Translator" />
    </a>
