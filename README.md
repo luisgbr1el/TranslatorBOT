@@ -5,8 +5,6 @@
    <a href="https://top.gg/bot/745021822361141278">
    <img src="https://top.gg/api/widget/745021822361141278.svg" alt="Translator" />
    </a>
-   <script src="https://discordbotlist.com/widget/index.js" async></script>
-<dbl-widget bot-id="bot-translator-4314" centered></dbl-widget>
 
 <h2> About </h2>
 
