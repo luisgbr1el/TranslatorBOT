@@ -40,7 +40,7 @@ npm install
 ### 3. Token
 To the bot authentication, you need to request a token to the bot in [Discord Developers](https://discord.com/developers/applications).
 
-Create a bot, copy token and paste in [index.js](https://github.com/luisgbr1el/BRTwitchTrackerDiscord/blob/main/index.js) last line. In this part:
+Create a bot, copy token and paste in [index.js](https://github.com/luisgbr1el/TranslatorBOT/blob/main/index.js) last line. In this part:
 ```js
 client.login(token);
 ```
@@ -58,7 +58,7 @@ node index.js
 That's a wrap! Now the bot is online.
 
 ## Contribute
-You can contribute to the project creating a [Pull Request](https://github.com/luisgbr1el/BRTwitchTrackerWebsite/pulls). If you don't know how to, follow the steps below:
+You can contribute to the project creating a [Pull Request](https://github.com/luisgbr1el/TranslatorBOT/pulls). If you don't know how to, follow the steps below:
 
 ### 1. Doing a fork
 A *fork* is basically a repository copy, but yours.
@@ -77,7 +77,7 @@ Do this how you want.
 Modify the code, but turn it better. Any unnecessary *Pull Request* will be closed.
 
 ### 4. Create a Pull Request
-1. To do a Pull Request, go to the [pulls](https://github.com/luisgbr1el/BRTwitchTrackerWebsite/pulls) tab and click in *New Pull Request*.
+1. To do a Pull Request, go to the [pulls](https://github.com/luisgbr1el/TranslatorBOT/pulls) tab and click in *New Pull Request*.
 2. Select **this** repository how `base` and your fork how `compare`.
 3. Do a sinopsis of your changes with *Markdown* and click in *Create Pull Request*.
 
