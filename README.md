@@ -13,8 +13,8 @@ A Discord bot that translates everything you type.
 
 ## Resources:
 <img  alt="Luis-Node" src="https://img.shields.io/badge/Node.js-black?style=for-the-badge&logo=node.js&logoColor=white"> <img  alt="Luis-NPM" src="https://img.shields.io/badge/NPM-black?style=for-the-badge&logo=npm&logoColor=white"> <img  alt="Luis-JS" src="https://img.shields.io/badge/JavaScript-black?style=for-the-badge&logo=javascript&logoColor=white">
-- Node.js
-- 
+
+- Node.js 
 - NPM
 - JavaScript
 
