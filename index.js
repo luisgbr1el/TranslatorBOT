@@ -1,66 +1,354 @@
-const Discord = require("discord.js");
-const { MessageEmbed } = require("discord.js");
-const config = require("./config.json");
-const bot = new Discord.Client();
-const fs = require("fs");
+const express = require("express"); // importing 'express' package to render a web panel
+const app = express();
+const port = 3000;
 
-// TO UPDATE HOW MANY GUILDS THE BOT ARE ON HTTPS://TOP.GG/ (OPTIONAL)
-const DBL = require("dblapi.js");
-const dbl = new DBL('DBL_API_TOKEN', bot);
+const DiscordJS = require("discord.js"); // importing 'discord.js' package
+const { MessageEmbed, MessageActionRow, MessageButton, MessageSelectMenu, MessageAttachment } = require("discord.js"); // importing classes from 'discord.js'
+const translate = require("@vitalets/google-translate-api"); // importing translation package
+const wait = require("node:timers/promises").setTimeout; // importing 'node timeout'
+const languageName = require("./functions/languageName"); // importing 'languageName' function
+const token = process.env["token"]; // importing bot token from secret keys
 
+const client = new DiscordJS.Client({
+  intents: [
+    DiscordJS.Intents.FLAGS.GUILDS,
+    DiscordJS.Intents.FLAGS.GUILD_MESSAGES,
+  ],
+}); // declaring bot intents
 
-bot.commands = new Discord.Collection();
+const discordModals = require("discord-modals");
+discordModals(client);
+const { Modal, showModal, TextInputComponent, SelectMenuComponent } = require("discord-modals"); // Import all
 
-// SHOW THAT THE COUNTER ARE POSTED
- dbl.on('posted', () => {
-   console.log('O contador está disponível!');
- })
-fs.readdir("./comandos/", (err, files) => {
-	if(err) console.error(err);
+// when client is ready...
+client.on("ready", () => {
+  const guilds = client.guilds.cache.map((guild) => guild.id);
+  console.log("[TRANSLATOR BOT ESTÁ ONLINE!]");
 
-	let arquivojs = files.filter(f => f.split(".").pop() == "js");
-	arquivojs.forEach((f, i) =>{
-		let props = require(`./comandos/${f}`);
-		console.log(`Comando ${f} carregado com sucesso.`)
-		bot.commands.set(props.help.name, props);
-	});
+  const activity = client.user.setActivity(`${guilds.length} guilds`, {
+    type: "LISTENING",
+  });
+
+  app.get("/", (req, res) =>
+    res.send(`
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Painel ${client.user.username} Bot</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+  body {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #303136;
+    color: #fdfdfe;
+    text-align: center;
+  }
+
+  hr {
+    width: 30%;
+  }
+
+  img {
+    border-radius: 50%;
+    border: 2px solid rgb(220,220,220);
+  }
+
+  a {
+    color: rgb(220,220,220);
+  }
+@media screen and (max-width: 600px) {
+    body {
+        margin: 10px;
+    }
+    
+    hr {
+      width: 95%;
+    }
+
+    div#code {
+        width: 80%;
+    }
+}
+</style>
+<body>
+  <h1>Painel ${client.user.username} Bot</h1>
+  <p>Em <b>${guilds.length}</b> servidores e <b>${
+      client.channels.cache.size
+    }</b> canais.</p>
+  <hr>
+  <h3>.setActivity()</h3>
+  <code>JSON OCULTO<!-- ${JSON.stringify(activity)} --></code><br><br>
+  Resultado: <code>${activity.activities[0].type} ${
+      activity.activities[0].name
+    }</code><br><br>
+  <hr>
+  <h3>.avatarURL()</h3>
+  <img width="100px" src="${client.user.avatarURL()}?size=512"><br>
+  <a href="${client.user.avatarURL()}" target="_blank">Clique aqui para visualizar</a><br><br>
+  <hr>
+</body>
+`)
+  );
+
+  app.listen(port, () =>
+    console.log(`Example app listening at http://localhost:${port}\n\n`)
+  );
+
+  // guild
+  //BOTS BETA ID
+  //const guildId = "777005017474793472";
+
+  // OFICINA DA NH ID
+  const guildId = "743257158602195074";
+
+  const guild = client.guilds.cache.get(guildId);
+
+  //let commands;
+
+  //if (guild) {
+  commands = guild.commands;
+  //} else {
+  //commands = client.application?.commands;
+  //}
+
+  commands?.create({
+    name: "help",
+    description: "View infos about Translator.",
+  });
+
+  commands?.create({
+    name: "feedback",
+    description: "Give a feedback about Translator.",
+  });
+
+  //  commands?.create({
+  //    name: "info",
+  //    description: "「Tools」See an explanation about a command.",
+  //    options: [
+  //      {
+  //        name: "command_name",
+  //        description: "Command name.",
+  //        required: true,
+  //        type: DiscordJS.Constants.ApplicationCommandOptionTypes.STRING,
+  //      },
+  //    ],
+  //  });
+
+  commands?.create({
+    name: "translate",
+    description: "Translate a text from a language to other.",
+    options: [
+      {
+        name: "from",
+        description: "From this language.",
+        required: true,
+        type: DiscordJS.Constants.ApplicationCommandOptionTypes.STRING,
+      },
+      {
+        name: "to",
+        description: "To this language.",
+        required: true,
+        type: DiscordJS.Constants.ApplicationCommandOptionTypes.STRING,
+      },
+      {
+        name: "text",
+        description: "Text you want to translate.",
+        required: true,
+        type: DiscordJS.Constants.ApplicationCommandOptionTypes.STRING,
+      },
+    ],
+  });
+
+  commands?.create({
+    name: "t",
+    description: "Auto translate text to a language.",
+    options: [
+      {
+        name: "to",
+        description: "To this language.",
+        required: true,
+        type: DiscordJS.Constants.ApplicationCommandOptionTypes.STRING,
+      },
+      {
+        name: "text",
+        description: "Text you want to translate.",
+        required: true,
+        type: DiscordJS.Constants.ApplicationCommandOptionTypes.STRING,
+      },
+    ],
+  });
+  //global
 });
 
-// UPDATE THE COUNTER ON A TIME PERIOD
-	bot.on('ready', () => {
-		setInterval(() => {
-        dbl.postStats(bot.guilds.size);
-  }, 1800000);
-		
-		var servers = bot.guilds.cache.size;
-    	console.log('Estou pronto para ser usado! (^-^)');
-		bot.user.setActivity(`t.help | ${servers} servers`, {type: "LISTENING"});
-  
+// admin ids LUIS, JUNIOR
+//const admIds = ['403648338286870529', '226700153652772866'];
 
+const modal = new Modal() // We create a Modal
+  .setCustomId("helpModal")
+  .setTitle("Feedback")
+  .addComponents(
+    new TextInputComponent() // We create a Text Input Component
+      .setCustomId("country")
+      .setLabel("Which country are you from?")
+      .setStyle("SHORT") //IMPORTANT: Text Input Component Style can be 'SHORT' or 'LONG'
+      .setPlaceholder("Write your country here")
+      .setRequired(true), // If it's required or not
+
+    new TextInputComponent() // We create a Text Input Component
+      .setCustomId("text")
+      .setLabel("Text")
+      .setStyle("LONG") //IMPORTANT: Text Input Component Style can be 'SHORT' or 'LONG'
+      .setPlaceholder("Write a feedback about Translator")
+      .setRequired(true) // If it's required or not
+  );
+
+client.on("modalSubmit", async (modal) => {
+  if (modal.customId === "helpModal") {
+    const nameResponse = modal.getTextInputValue("country");
+    const themeResponse = modal.getTextInputValue("text");
+    modal.reply(
+      `Thank you for the feedback!\nSo, you are **${nameResponse}** and you like the **${themeResponse}** theme. Awesome!`
+    );
+  }
 });
 
-// Create an event listener for messages
-	bot.on('message', message => {
-	if(message.channel.type === "dm") return;
+// when an user request an interaction (button click, slash command, modal submit, etc.)
+client.on("interactionCreate", async (interaction) => {
+  if (!interaction.isCommand()) {
+    return;
+  }
 
-	  	if (!message.guild) return;
+  const { commandName, options, customId } = interaction;
 
-	
-	let prefix = config.prefix;
-	let messageArray = message.content.split(" ");
-	let command = messageArray[0];
-	let args = messageArray.slice(1);
+  if (commandName === "help") {
+    const row = new MessageActionRow().addComponents(
+      new MessageSelectMenu()
+        .setCustomId("select")
+        .setPlaceholder("Select an option")
+        .addOptions([
+          {
+            label: "My commands",
+            description: "View infos about my commands.",
+            value: "commands",
+            emoji: "🤖",
+          },
+          {
+            label: "My code",
+            description: "View my source code on GitHub.",
+            value: "lcode",
+            emoji: "👁‍🗨",
+          },
+          {
+            label: "Donate",
+            description: "Donate to help maintain me!",
+            value: "donate",
+            emoji: "🤑",
+          },
+        ])
+    );
 
-	if(!message.content.startsWith(prefix)) return;
-		if (message.content === "t.") {
-		message.reply('type ``t.help`` to a guide.');
-		}
+    const embed = new MessageEmbed()
+      .setColor("#03C48A")
+      .setAuthor({
+        name: "Translator",
+        iconURL: `${client.user.avatarURL()}?size=128`,
+      })
+      .setDescription("What do you want to know?");
 
+    await interaction.reply({ embeds: [embed], components: [row] });
+  } else if (commandName === "feedback") {
+    showModal(modal, {
+      client: client, // Client to show the Modal through the Discord API.
+      interaction: interaction, // Show the modal with interaction data.
+    });
+    //interaction.reply({ content: "oi!!", ephemeral: false });
+  } else if (commandName === "t") {
+    const toLanguage = options.getString("to");
+    const text = options.getString("text");
 
-	let arquivocmd = bot.commands.get(command.slice(prefix.length));
-	if(arquivocmd) return arquivocmd.run(bot,message,args);
+    const avatarURL = `https://cdn.discordapp.com/avatars/${interaction.user.id}/${interaction.user.avatar}.png?size=128`;
+    translate(text, { to: toLanguage })
+      .then((res) => {
+        const embed = new MessageEmbed()
+          .setAuthor({
+            name: `${interaction.user.username}`,
+            iconURL: avatarURL,
+          })
+          .addField("Detected language:", languageName(res.from.language.iso))
+          .addField(
+            `Translating to ${languageName(toLanguage)}...`,
+            "`" + res.text + "`"
+          )
+          .setColor("#03C48A")
+          .setTimestamp()
+          .setFooter({ text: "Translator" });
 
+        interaction.reply({ embeds: [embed], ephemeral: false });
+      })
+      .catch((err) => {
+        interaction.reply({ content: "`" + err + "`", ephemeral: true });
+      });
+  } else if (commandName === "translate") {
+    const fromLanguage = options.getString("from");
+    const toLanguage = options.getString("to");
+    const text = options.getString("text");
+    const avatarURL = `https://cdn.discordapp.com/avatars/${interaction.user.id}/${interaction.user.avatar}.png?size=128`;
 
-	});
+    const loadingEmbed = new MessageEmbed()
+      .setDescription("**<a:loading_blue:812410783651856424> Translating...**")
+      .setColor("#03C48A");
 
-bot.login(config.token);
+    interaction.reply({ embeds: [loadingEmbed], ephemeral: false });
+    translate(text, { from: fromLanguage, to: toLanguage })
+      .then(async (res) => {
+        //console.log(res.text);
+        //=> Ik spreek Nederlands!
+        //console.log(res.from.text.autoCorrected);
+        //=> true
+        //console.log(res.from.text.value);
+        //=> I [speak] Dutch!
+        //console.log(res.from.text.didYouMean);
+        //=> false
+
+        const translated = new MessageEmbed().setAuthor({
+          name: `${interaction.user.username} is translating...`,
+          iconURL: avatarURL,
+        });
+
+        if (res.from.text.didYouMean == true) {
+          translated.addField(
+            `From ${languageName(fromLanguage)}:`,
+            "`" + res.from.text.value + "`"
+          );
+        } else {
+          translated.addField(
+            `From ${languageName(fromLanguage)}:`,
+            "`" + text + "`"
+          );
+        }
+
+        translated.addField(
+          `To ${languageName(toLanguage)}:`,
+          "`" + res.text + "`"
+        );
+        translated.setColor("#03C48A");
+        translated.setTimestamp();
+        translated.setFooter({ text: "Translator" });
+
+        await wait(2000);
+        interaction.editReply({ embeds: [translated], ephemeral: false });
+      })
+      .catch((err) => {
+        interaction.reply({ content: "`" + err + "`", ephemeral: true });
+      });
+  }
+});
+
+client.on("messageCreate", (message) => {
+  //  if (message.content == 'ping') {
+  //    message.reply({
+  //      content: 'pong',
+  //    })
+  //  }
+});
+
+client.login(token);
