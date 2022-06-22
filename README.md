@@ -1,5 +1,5 @@
 # Translator
-
+## V2.0 IN DEVELOPMENT!
 
    <a href="https://ibb.co/XjWT7vx"><img src="https://i.ibb.co/8NmVrSg/logo-translatorbot.png" alt="logo-translatorbot" border="0" width="300px" height="300px"></a>
 
