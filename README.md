@@ -86,7 +86,7 @@ Modify the code, but turn it better. Any unnecessary *Pull Request* will be clos
 
 ### 4. Create a Pull Request
 1. To do a Pull Request, go to the [pulls](https://github.com/luisgbr1el/TranslatorBOT/pulls) tab and click in *New Pull Request*.
-2. Select **this** repository how `base` and your fork how `compare`.
+2. Select **this** repository as `base` and your fork as `compare`.
 3. Do a sinopsis of your changes with *Markdown* and click in *Create Pull Request*.
 
 Your contribution will be verified by me and if it's right, you'll be a member of this project!
