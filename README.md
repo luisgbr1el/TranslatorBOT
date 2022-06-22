@@ -11,13 +11,21 @@
 
 A Discord bot that translates everything you type.
 
-## Resources:
+## Resources
 <img  alt="Luis-Node" src="https://img.shields.io/badge/Node.js-black?style=for-the-badge&logo=node.js&logoColor=white"> <img  alt="Luis-NPM" src="https://img.shields.io/badge/NPM-black?style=for-the-badge&logo=npm&logoColor=white"> <img  alt="Luis-JS" src="https://img.shields.io/badge/JavaScript-black?style=for-the-badge&logo=javascript&logoColor=white">
 
 - Node.js 
 - NPM
 - JavaScript
 
+## Emojis meanings
+We use emojis on commits names to represent what we did. So below is a table with their meanings.
+|Emoji|Meaning|
+|-|-|
+|🆕|New function, file, condition, etc.|
+|♻|Updating code, packages or recycling code|
+|✅|Issue fixed successfully, PR merged|
+|❌|Error to fix issue, code/file/folder removed|
 
 ## Build
 To compile this project in your PC. Follow this steps:
