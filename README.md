@@ -26,6 +26,7 @@ We use emojis on commits names to represent what we did. So below is a table wit
 |♻|Updating code, packages or recycling code|
 |✅|Issue fixed successfully, PR merged|
 |❌|Error to fix issue, code/file/folder removed|
+|🔧|Code block fixed/corrected|
 
 ## Build
 To compile this project in your PC. Follow this steps:
