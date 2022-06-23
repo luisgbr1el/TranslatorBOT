@@ -1,5 +1,5 @@
 {
-  "name": "Translator",
+  "name": "TranslatorBOT",
   "version": "2.0.0",
   "description": "A Discord bot that translates everything you type.",
   "main": "index.js",
