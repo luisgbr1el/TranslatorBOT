@@ -84,7 +84,7 @@ client.on("ready", () => {
   <hr>
   <h3>.avatarURL()</h3>
   <img width="100px" src="${client.user.avatarURL()}?size=512"><br>
-  <a href="${client.user.avatarURL()}" target="_blank">Click here to view</a><br><br>
+  <a href="${client.user.avatarURL()}?size=512" target="_blank">Click here to view</a><br><br>
   <hr>
 </body>
 `)
@@ -217,13 +217,7 @@ client.on("interactionCreate", async (interaction) => {
             description: "View my source code on GitHub.",
             value: "lcode",
             emoji: "👁‍🗨",
-          },
-          {
-            label: "Donate",
-            description: "Donate to help maintain me!",
-            value: "donate",
-            emoji: "🤑",
-          },
+          }
         ])
     );
 
