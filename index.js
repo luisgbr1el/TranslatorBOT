@@ -32,7 +32,7 @@ client.on("ready", () => {
   app.get("/", (req, res) =>
     res.send(`
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Painel ${client.user.username} Bot</title>
+<title>Panel ${client.user.username} Bot</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
 
@@ -70,20 +70,21 @@ client.on("ready", () => {
 }
 </style>
 <body>
-  <h1>Painel ${client.user.username} Bot</h1>
-  <p>Em <b>${guilds.length}</b> servidores e <b>${
+  <h1>Panel ${client.user.username} Bot</h1>
+  <p><b>${guilds.length}</b> guilds and <b>${
       client.channels.cache.size
-    }</b> canais.</p>
+    }</b> channels.</p>
+  <p>Bot ID: ${client.user.id}</p>
   <hr>
   <h3>.setActivity()</h3>
-  <code>JSON OCULTO<!-- ${JSON.stringify(activity)} --></code><br><br>
-  Resultado: <code>${activity.activities[0].type} ${
+  <code>HIDDEN JSON<!-- ${JSON.stringify(activity)} --></code><br><br>
+  Result: <code>${activity.activities[0].type} ${
       activity.activities[0].name
     }</code><br><br>
   <hr>
   <h3>.avatarURL()</h3>
   <img width="100px" src="${client.user.avatarURL()}?size=512"><br>
-  <a href="${client.user.avatarURL()}" target="_blank">Clique aqui para visualizar</a><br><br>
+  <a href="${client.user.avatarURL()}" target="_blank">Click here to view</a><br><br>
   <hr>
 </body>
 `)
@@ -95,10 +96,7 @@ client.on("ready", () => {
 
   // guild
   //BOTS BETA ID
-  //const guildId = "777005017474793472";
-
-  // OFICINA DA NH ID
-  const guildId = "743257158602195074";
+  const guildId = "777005017474793472";
 
   const guild = client.guilds.cache.get(guildId);
 
@@ -115,23 +113,10 @@ client.on("ready", () => {
     description: "View infos about Translator.",
   });
 
-  commands?.create({
-    name: "feedback",
-    description: "Give a feedback about Translator.",
-  });
-
-  //  commands?.create({
-  //    name: "info",
-  //    description: "「Tools」See an explanation about a command.",
-  //    options: [
-  //      {
-  //        name: "command_name",
-  //        description: "Command name.",
-  //        required: true,
-  //        type: DiscordJS.Constants.ApplicationCommandOptionTypes.STRING,
-  //      },
-  //    ],
-  //  });
+  //commands?.create({
+    //name: "feedback",
+    //description: "Give a feedback about Translator.",
+  //});
 
   commands?.create({
     name: "translate",
@@ -179,37 +164,33 @@ client.on("ready", () => {
   //global
 });
 
-// admin ids LUIS, JUNIOR
-//const admIds = ['403648338286870529', '226700153652772866'];
+//const modal = new Modal() // We create a Modal
+  //.setCustomId("helpModal")
+  //.setTitle("Feedback")
+  //.addComponents(
+    //new TextInputComponent() // We create a Text Input Component
+      //.setCustomId("country")
+      //.setLabel("Which country are you from?")
+      //.setStyle("SHORT") //IMPORTANT: Text Input Component Style can be 'SHORT' or 'LONG'
+      //.setPlaceholder("Write your country here")
+      //.setRequired(true), // If it's required or not
 
-const modal = new Modal() // We create a Modal
-  .setCustomId("helpModal")
-  .setTitle("Feedback")
-  .addComponents(
-    new TextInputComponent() // We create a Text Input Component
-      .setCustomId("country")
-      .setLabel("Which country are you from?")
-      .setStyle("SHORT") //IMPORTANT: Text Input Component Style can be 'SHORT' or 'LONG'
-      .setPlaceholder("Write your country here")
-      .setRequired(true), // If it's required or not
+    //new TextInputComponent() // We create a Text Input Component
+      //.setCustomId("text")
+      //.setLabel("Text")
+      //.setStyle("LONG") //IMPORTANT: Text Input Component Style can be 'SHORT' or 'LONG'
+      //.setPlaceholder("Write a feedback about Translator")
+      //.setRequired(true) // If it's required or not
+  //);
 
-    new TextInputComponent() // We create a Text Input Component
-      .setCustomId("text")
-      .setLabel("Text")
-      .setStyle("LONG") //IMPORTANT: Text Input Component Style can be 'SHORT' or 'LONG'
-      .setPlaceholder("Write a feedback about Translator")
-      .setRequired(true) // If it's required or not
-  );
-
-client.on("modalSubmit", async (modal) => {
-  if (modal.customId === "helpModal") {
-    const nameResponse = modal.getTextInputValue("country");
-    const themeResponse = modal.getTextInputValue("text");
-    modal.reply(
-      `Thank you for the feedback!\nSo, you are **${nameResponse}** and you like the **${themeResponse}** theme. Awesome!`
-    );
-  }
-});
+//client.on("modalSubmit", async (modal) => {
+  //if (modal.customId === "helpModal") {
+    //const nameResponse = modal.getTextInputValue("country");
+    //const themeResponse = modal.getTextInputValue("text");
+    //modal.reply(`Thank you for the feedback!\nSo, you are **${nameResponse}** and you like the **${themeResponse}** theme. Awesome!`
+    //);
+  //}
+//});
 
 // when an user request an interaction (button click, slash command, modal submit, etc.)
 client.on("interactionCreate", async (interaction) => {
@@ -256,10 +237,10 @@ client.on("interactionCreate", async (interaction) => {
 
     await interaction.reply({ embeds: [embed], components: [row] });
   } else if (commandName === "feedback") {
-    showModal(modal, {
-      client: client, // Client to show the Modal through the Discord API.
-      interaction: interaction, // Show the modal with interaction data.
-    });
+    //showModal(modal, {
+      //client: client, // Client to show the Modal through the Discord API.
+      //interaction: interaction, // Show the modal with interaction data.
+    //});
     //interaction.reply({ content: "oi!!", ephemeral: false });
   } else if (commandName === "t") {
     const toLanguage = options.getString("to");
