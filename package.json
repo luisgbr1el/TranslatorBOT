@@ -1,15 +1,15 @@
 {
-  "name": "TranslatorBOT",
+  "name": "Translator",
   "version": "2.0.0",
-  "description": "",
+  "description": "A Discord bot that translates everything you type.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["translation", "discord", "discord.js", "translate", "discordbot"],
+  "author": "luisgbr1el",
+  "license": "MIT",
   "dependencies": {
     "@vitalets/google-translate-api": "^8.0.0",
     "discord-modals": "^1.3.7",
