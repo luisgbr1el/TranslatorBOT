@@ -223,8 +223,26 @@ client.on("interactionCreate", async (interaction) => {
 			);
         
         await interaction.update({ components: [row], embeds: [commandsEmbed] });
-      } else if (interaction.values === 'code') {
-        await interaction.update({ content: "something was selected!", components: []});
+      } else if (interaction.values == "code") {
+        const repoEmbed = new MessageEmbed()
+        .setColor("#03C48A")
+        .setAuthor({
+          name: "Translator",
+          iconURL: `${client.user.avatarURL()}?size=128`,
+        })
+        .setDescription("Click on button below to visit my GitHub repository.")
+        .setFooter({ text: "Translator" })
+        .setTimestamp()
+
+        const row = new MessageActionRow()
+			.addComponents(
+				new MessageButton()
+					.setLabel('GitHub repository')
+          .setURL('https://github.com/luisgbr1el/TranslatorBOT/')
+					.setStyle('LINK'),
+			);
+        
+        await interaction.update({ components: [row], embeds: [repoEmbed] });
       }
       //const embed = new MessageEmbed()
 		  
