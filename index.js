@@ -194,11 +194,44 @@ client.on("ready", () => {
 
 // when an user request an interaction (button click, slash command, modal submit, etc.)
 client.on("interactionCreate", async (interaction) => {
-  if (!interaction.isCommand()) {
-    return;
-  }
 
   const { commandName, options, customId } = interaction;
+  
+  if (interaction.customId === "select") {
+
+      if (interaction.values == "commands") {
+
+        const commandsEmbed = new MessageEmbed()
+        .setTitle("Commands")
+        .setColor("#03C48A")
+        .setAuthor({
+          name: "Translator",
+          iconURL: `${client.user.avatarURL()}?size=128`,
+        })
+        .setDescription("Bot commands guide.\nAll ISO codes are available on bot website.")
+        .addField("/translate", "You can translate from a language to another with this command.\n**Example:**\n`/translate en pt Hey there!`\n\nIt will return '`Olá!`'.")
+        .addField("/t", "This command is a quick version of **/translate**, you don't need to identify what is the language you're providing. The bot will try to identify it.\n**Example:**\n`/t en Bom dia!`\n\nIt will detect **Portuguese** and return '`Good morning!`'.")
+        .setFooter({ text: "Translator" })
+        .setTimestamp()
+
+        const row = new MessageActionRow()
+			.addComponents(
+				new MessageButton()
+					.setLabel('ISO codes')
+          .setURL('https://translatorbot.gitbook.io/languages/')
+					.setStyle('LINK'),
+			);
+        
+        await interaction.update({ components: [row], embeds: [commandsEmbed] });
+      } else if (interaction.values === 'code') {
+        await interaction.update({ content: "something was selected!", components: []});
+      }
+      //const embed = new MessageEmbed()
+		  
+	}
+
+  // below this, if interaction is not a command, it returns none
+  if (!interaction.isCommand()) return;
 
   if (commandName === "help") {
     const row = new MessageActionRow().addComponents(
@@ -215,7 +248,7 @@ client.on("interactionCreate", async (interaction) => {
           {
             label: "My code",
             description: "View my source code on GitHub.",
-            value: "lcode",
+            value: "code",
             emoji: "👁‍🗨",
           }
         ])
@@ -227,9 +260,11 @@ client.on("interactionCreate", async (interaction) => {
         name: "Translator",
         iconURL: `${client.user.avatarURL()}?size=128`,
       })
-      .setDescription("What do you want to know?");
+      .setDescription("Hey there! I can translate everything you type.\n\nDeveloped by [luisgbr1el](https://github.com/luisgbr1el)\nv2.0.0")
+      .setFooter({ text: "Translator" })
+      .setTimestamp()
 
-    await interaction.reply({ embeds: [embed], components: [row] });
+    await interaction.reply({ embeds: [embed], components: [row], ephemeral: true });
   } else if (commandName === "feedback") {
     //showModal(modal, {
       //client: client, // Client to show the Modal through the Discord API.
