@@ -269,7 +269,7 @@ client.on("interactionCreate", async (interaction) => {
         name: "Translator",
         iconURL: `${client.user.avatarURL()}?size=128`,
       })
-      .setDescription("Hey there! I can translate everything you type.\n\nDeveloped by [luisgbr1el](https://github.com/luisgbr1el)\nv2.0.0")
+      .setDescription("Hey there! I can translate everything you type.\nView more in my **about me** section. \n\nDeveloped by [luisgbr1el](https://github.com/luisgbr1el)")
       .setFooter({ text: "Translator" })
       .setTimestamp()
 
