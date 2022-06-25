@@ -199,16 +199,13 @@ client.on("interactionCreate", async (interaction) => {
       if (interaction.values == "commands") {
 
         const commandsEmbed = new MessageEmbed()
-        .setTitle("Commands")
         .setColor("#03C48A")
-        .setAuthor({
-          name: "Translator",
-          iconURL: `${client.user.avatarURL()}?size=128`,
-        })
-        .setDescription("Bot commands guide.\nAll ISO codes are available on bot website.")
-        .addField("/translate", "You can translate from a language to another with this command.\n**Example:**\n`/translate en pt Hey there!`\n\nIt will return '`Olá!`'.")
-        .addField("/t", "This command is a quick version of **/translate**, you don't need to identify what is the language you're providing. The bot will try to identify it.\n**Example:**\n`/t en Bom dia!`\n\nIt will detect **Portuguese** and return '`Good morning!`'.")
-        .setFooter({ text: "Translator" })
+        .setTitle("Commands")
+        .setThumbnail(`${client.user.avatarURL()}?size=512`)
+        .setDescription("Translator's commands guide.\nAll ISO codes are available on bot website.")
+        .addField("/translate", "You can translate from a language to another with this command.\n**Example:**\n`/translate en pt Hey there!`\n\nIt will return `Olá!`.", true)
+        .addField("/t", "This command is a quick version of **/translate**, you don't need to identify what is the language you're providing. The bot will try to identify it.\n**Example:**\n`/t en Bom dia!`\n\nIt will detect **Portuguese** and return `Good morning!`.", true)
+        .setFooter({ text: "Translator", iconURL: `${client.user.avatarURL()}?size=128` })
         .setTimestamp()
 
         const row = new MessageActionRow()
@@ -227,9 +224,7 @@ client.on("interactionCreate", async (interaction) => {
           name: "Translator",
           iconURL: `${client.user.avatarURL()}?size=128`,
         })
-        .setDescription("Click on button below to visit my GitHub repository.")
-        .setFooter({ text: "Translator" })
-        .setTimestamp()
+        .setDescription("Click on button below to visit my **GitHub** repository.")
 
         const row = new MessageActionRow()
 	.addComponents(
