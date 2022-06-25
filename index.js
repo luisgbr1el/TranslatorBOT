@@ -10,10 +10,7 @@ const languageName = require("./functions/languageName"); // importing 'language
 const token = process.env["token"]; // importing bot token from secret keys
 
 const client = new DiscordJS.Client({
-  intents: [
-    DiscordJS.Intents.FLAGS.GUILDS,
-    DiscordJS.Intents.FLAGS.GUILD_MESSAGES,
-  ],
+  intents: 84992,
 }); // declaring bot intents
 
 const discordModals = require("discord-modals");
@@ -215,13 +212,13 @@ client.on("interactionCreate", async (interaction) => {
         .setTimestamp()
 
         const row = new MessageActionRow()
-			.addComponents(
-				new MessageButton()
-					.setLabel('ISO codes')
-          .setURL('https://translatorbot.gitbook.io/languages/')
-					.setStyle('LINK'),
-			);
-        
+	.addComponents(
+		new MessageButton()
+		.setLabel('ISO codes')
+          	.setURL('https://translatorbot.gitbook.io/languages/')
+		.setStyle('LINK'),
+		);
+     
         await interaction.update({ components: [row], embeds: [commandsEmbed] });
       } else if (interaction.values == "code") {
         const repoEmbed = new MessageEmbed()
@@ -235,18 +232,17 @@ client.on("interactionCreate", async (interaction) => {
         .setTimestamp()
 
         const row = new MessageActionRow()
-			.addComponents(
-				new MessageButton()
-					.setLabel('GitHub repository')
-          .setURL('https://github.com/luisgbr1el/TranslatorBOT/')
-					.setStyle('LINK'),
-			);
+	.addComponents(
+		new MessageButton()
+		.setLabel('GitHub repository')
+          	.setURL('https://github.com/luisgbr1el/TranslatorBOT/')
+		.setStyle('LINK'),
+		);
         
         await interaction.update({ components: [row], embeds: [repoEmbed] });
       }
-      //const embed = new MessageEmbed()
-		  
-	}
+
+  }
 
   // below this, if interaction is not a command, it returns none
   if (!interaction.isCommand()) return;
