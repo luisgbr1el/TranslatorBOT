@@ -319,14 +319,6 @@ client.on("interactionCreate", async (interaction) => {
     interaction.reply({ embeds: [loadingEmbed], ephemeral: false });
     translate(text, { from: fromLanguage, to: toLanguage })
       .then(async (res) => {
-        //console.log(res.text);
-        //=> Ik spreek Nederlands!
-        //console.log(res.from.text.autoCorrected);
-        //=> true
-        //console.log(res.from.text.value);
-        //=> I [speak] Dutch!
-        //console.log(res.from.text.didYouMean);
-        //=> false
 
         const translated = new MessageEmbed().setAuthor({
           name: `${interaction.user.username} is translating...`,
