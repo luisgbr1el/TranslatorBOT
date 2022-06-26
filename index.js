@@ -4,6 +4,7 @@ const port = 3000;
 
 const DiscordJS = require("discord.js"); // importing 'discord.js' package
 const { MessageEmbed, MessageActionRow, MessageButton, MessageSelectMenu, MessageAttachment } = require("discord.js"); // importing classes from 'discord.js'
+const { ContextMenuCommandBuilder } = require('@discordjs/builders');
 const translate = require("@vitalets/google-translate-api"); // importing translation package
 const wait = require("node:timers/promises").setTimeout; // importing 'node timeout'
 const languageName = require("./functions/languageName"); // importing 'languageName' function
@@ -158,7 +159,12 @@ client.on("ready", () => {
       },
     ],
   });
-  //global
+  
+  commands?.create({
+    name: 'Translate message',
+    type: DiscordJS.Constants.ApplicationCommandTypes.MESSAGE
+  });
+
 });
 
 //const modal = new Modal() // We create a Modal
@@ -237,6 +243,36 @@ client.on("interactionCreate", async (interaction) => {
         await interaction.update({ components: [row], embeds: [repoEmbed] });
       }
 
+  }
+
+  if (interaction.isMessageContextMenu()) {
+    const user = options._hoistedOptions[0].message.author.username;
+    const messageContent = options._hoistedOptions[0].message.content;
+    const avatarURL = `https://cdn.discordapp.com/avatars/${interaction.user.id}/${interaction.user.avatar}.png?size=128`;
+    const toLanguage = "en";
+
+    translate(messageContent, { to: toLanguage })
+      .then((res) => {
+        const embed = new MessageEmbed()
+          .setAuthor({
+            name: `${interaction.user.username} is translating ${user}'s message...`,
+            iconURL: avatarURL,
+          })
+          .addField("Detected language:", languageName(res.from.language.iso))
+          .addField(
+            `Translating to ${languageName(toLanguage)}...`,
+            "`" + res.text + "`"
+          )
+          .setColor("#03C48A")
+          .setTimestamp()
+          .setFooter({ text: "Translator" });
+
+        interaction.reply({ embeds: [embed], ephemeral: false });
+      })
+      .catch((err) => {
+        interaction.reply({ content: "`" + err + "`", ephemeral: true });
+      });
+    
   }
 
   // below this, if interaction is not a command, it returns none
