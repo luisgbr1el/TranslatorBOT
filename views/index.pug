@@ -1,0 +1,28 @@
+doctype html
+html(lang="en")
+  head
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title
+      != 'Panel ' + username + ' Bot'
+    style
+      include css/index.css
+  body
+    h1 Panel #{username} Bot
+    p
+      != '<b>' + guilds + '</b> guilds and <b>' + channels + '</b> channels.'
+  
+    p
+      != '<b>Bot ID:</b> ' + botId
+    hr
+    h3 .setActivity()
+    code
+      != 'HIDDEN JSON'
+    br/
+    p
+      != 'Result: <code>' + actType + ' ' + actName + '</code>'
+    hr
+    h3 .avatarURL()
+    img(width="100px", src=avatarURL + "?size=512")
+    br/
+    a(href=avatarURL + "?size=512", target="_blank") Click here to view
+    hr
