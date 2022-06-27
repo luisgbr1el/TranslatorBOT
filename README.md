@@ -28,6 +28,15 @@ We use emojis on commits names to represent what we did. So below is a table wit
 |❌|Error to fix issue, code/file/folder removed|
 |🔧|Code block fixed/corrected|
 
+## Bot commands
+View below bot commands and how to use each one.
+|Command|Type|Description|Example|
+|-|-|-|-|
+|`/translate`|Slash command|Translate text from a language to another.|`/translate en es Hey there!`|
+|`/t`|Slash command|Auto translate text to a language.|`/t es Hey there!`|
+|`/help`|Slash command|View bot guide and info.|`/help`|
+|`Translate message`|Message Context Menu|Translate any message.|Right-click on a message > Apps > Translate message|
+
 ## Build
 To compile this project in your PC. Follow this steps:
 
