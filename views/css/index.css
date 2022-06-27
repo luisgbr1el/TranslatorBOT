@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+  
+    body {
+      font-family: 'Ubuntu', sans-serif;
+      background-color: #303136;
+      color: #fdfdfe;
+      text-align: center;
+    }
+  
+    hr {
+      width: 30%;
+    }
+  
+    img {
+      border-radius: 50%;
+      border: 2px solid rgb(220,220,220);
+    }
+  
+    a {
+      color: rgb(220,220,220);
+    }
+  
+    @media screen and (max-width: 600px) {
+      body {
+          margin: 10px;
+      }
+      
+      hr {
+        width: 95%;
+      }
+  
+      div#code {
+          width: 80%;
+      }
+
+  }
