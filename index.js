@@ -1,6 +1,7 @@
 const express = require("express"); // importing 'express' package to render a web panel
 const app = express();
 const port = 3000;
+const path = require('path');
 
 const DiscordJS = require("discord.js"); // importing 'discord.js' package
 const { MessageEmbed, MessageActionRow, MessageButton, MessageSelectMenu, MessageAttachment } = require("discord.js"); // importing classes from 'discord.js'
@@ -27,66 +28,9 @@ client.on("ready", () => {
     type: "LISTENING",
   });
 
-  app.get("/", (req, res) =>
-    res.send(`
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Panel ${client.user.username} Bot</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
-
-  body {
-    font-family: 'Ubuntu', sans-serif;
-    background-color: #303136;
-    color: #fdfdfe;
-    text-align: center;
-  }
-
-  hr {
-    width: 30%;
-  }
-
-  img {
-    border-radius: 50%;
-    border: 2px solid rgb(220,220,220);
-  }
-
-  a {
-    color: rgb(220,220,220);
-  }
-@media screen and (max-width: 600px) {
-    body {
-        margin: 10px;
-    }
-    
-    hr {
-      width: 95%;
-    }
-
-    div#code {
-        width: 80%;
-    }
-}
-</style>
-<body>
-  <h1>Panel ${client.user.username} Bot</h1>
-  <p><b>${guilds.length}</b> guilds and <b>${
-      client.channels.cache.size
-    }</b> channels.</p>
-  <p>Bot ID: ${client.user.id}</p>
-  <hr>
-  <h3>.setActivity()</h3>
-  <code>HIDDEN JSON<!-- ${JSON.stringify(activity)} --></code><br><br>
-  Result: <code>${activity.activities[0].type} ${
-      activity.activities[0].name
-    }</code><br><br>
-  <hr>
-  <h3>.avatarURL()</h3>
-  <img width="100px" src="${client.user.avatarURL()}?size=512"><br>
-  <a href="${client.user.avatarURL()}?size=512" target="_blank">Click here to view</a><br><br>
-  <hr>
-</body>
-`)
-  );
+  app.get("/", function(req, res) {
+    res.render('index.pug', { username: client.user.username, guilds: guilds.length, channels: client.channels.cache.size, botId: client.user.id, actType: activity.activities[0].type, actName: activity.activities[0].name, avatarURL: client.user.avatarURL() });
+  });
 
   app.listen(port, () =>
     console.log(`Example app listening at http://localhost:${port}\n\n`)
