@@ -173,7 +173,7 @@ client.on("interactionCreate", async (interaction) => {
           name: "Translator",
           iconURL: `${client.user.avatarURL()}?size=128`,
         })
-        .setDescription("Click on button below to visit my **GitHub** repository.")
+        .setDescription("Click on button below to visit my **GitHub** repository and give me a star. ⭐")
 
         const row = new MessageActionRow()
 	.addComponents(
@@ -334,11 +334,11 @@ client.on("interactionCreate", async (interaction) => {
 });
 
 client.on("messageCreate", (message) => {
-  //  if (message.content == 'ping') {
-  //    message.reply({
-  //      content: 'pong',
-  //    })
-  //  }
+    if (message.content == "t.t") {
+      message.reply({
+        content: 'This command type was **deprecated**. :(\nPlease, update my permissions to use my commands.',
+      })
+    }
 });
 
 client.login(token);
