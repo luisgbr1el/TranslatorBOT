@@ -31,7 +31,7 @@ client.on("ready", () => {
   });
 
   app.listen(process.env.PORT || 5000, () =>
-    console.log(`Example app listening at http://localhost:${port}\n\n`)
+    console.log(`Example app listening at http://localhost:${process.env.PORT || 5000}\n\n`)
   );
 
   let commands;
