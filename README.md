@@ -100,5 +100,7 @@ Modify the code, but turn it better. Any unnecessary *Pull Request* will be clos
 
 Your contribution will be verified by me and if it's right, you'll be a member of this project!
 
-## Author
-[luisgbr1el](https://github.com/luisgbr1el)
+## Repository contributors
+<a href = "https://github.com/luisgbr1el/TranslatorBOT/graphs/contributors">
+  <img src = "https://contrib.rocks/image?repo=luisgbr1el/TranslatorBOT"/>
+</a>
