@@ -1,7 +1,6 @@
 # Translator
-## V2.0 IN DEVELOPMENT!
 
-   <a href="https://ibb.co/XjWT7vx"><img src="https://i.ibb.co/8NmVrSg/logo-translatorbot.png" alt="logo-translatorbot" border="0" width="300px" height="300px"></a>
+   <img src="https://cdn.discordapp.com/avatars/745021822361141278/38e8f05ef2b04dd2540de0d90be7c034.png?size=2048" alt="logo-translatorbot" border="0" width="300px" height="300px">
 
 
 [![GitHub forks](https://img.shields.io/github/forks/luisgbr1el/translatorbot?style=for-the-badge)](https://github.com/luisgbr1el/brtwitchtracker-website/network)
