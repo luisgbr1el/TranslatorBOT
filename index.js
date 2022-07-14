@@ -1,6 +1,6 @@
 //const express = require("express"); // importing 'express' package to render a web panel
-const app = express();
-const port = 3000;
+//const app = express();
+//const port = 3000;
 
 const DiscordJS = require("discord.js"); // importing 'discord.js' package
 const { MessageEmbed, MessageActionRow, MessageButton, MessageSelectMenu, MessageAttachment } = require("discord.js"); // importing classes from 'discord.js'
