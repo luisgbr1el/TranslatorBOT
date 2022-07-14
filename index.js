@@ -1,4 +1,4 @@
-const express = require("express"); // importing 'express' package to render a web panel
+//const express = require("express"); // importing 'express' package to render a web panel
 const app = express();
 const port = 3000;
 
@@ -27,13 +27,13 @@ client.on("ready", () => {
     type: "LISTENING",
   });
 
-  app.get("/", function(req, res) {
-    res.render('index.pug', { username: client.user.username, guilds: guilds.length, channels: client.channels.cache.size, botId: client.user.id, actType: activity.activities[0].type, actName: activity.activities[0].name, avatarURL: client.user.avatarURL() });
-  });
+  //app.get("/", function(req, res) {
+  //  res.render('index.pug', { username: client.user.username, guilds: guilds.length, channels: client.channels.cache.size, botId: client.user.id, actType: activity.activities[0].type, actName: activity.activities[0].name, avatarURL: client.user.avatarURL() });
+  //});
 
-  app.listen(port, () =>
-    console.log(`Example app listening at http://localhost:${port}\n\n`)
-  );
+  //app.listen(port, () =>
+  //  console.log(`Example app listening at http://localhost:${port}\n\n`)
+  //);
 
   let commands;
   commands = client.application?.commands;
