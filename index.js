@@ -1,6 +1,5 @@
-//const express = require("express"); // importing 'express' package to render a web panel
-//const app = express();
-//const port = 3000;
+const express = require("express"); // importing 'express' package to render a web panel
+const app = express();
 
 const DiscordJS = require("discord.js"); // importing 'discord.js' package
 const { MessageEmbed, MessageActionRow, MessageButton, MessageSelectMenu, MessageAttachment } = require("discord.js"); // importing classes from 'discord.js'
@@ -27,13 +26,13 @@ client.on("ready", () => {
     type: "LISTENING",
   });
 
-  //app.get("/", function(req, res) {
-  //  res.render('index.pug', { username: client.user.username, guilds: guilds.length, channels: client.channels.cache.size, botId: client.user.id, actType: activity.activities[0].type, actName: activity.activities[0].name, avatarURL: client.user.avatarURL() });
-  //});
+  app.get("/", function(req, res) {
+    res.render('index.pug', { username: client.user.username, guilds: guilds.length, channels: client.channels.cache.size, botId: client.user.id, actType: activity.activities[0].type, actName: activity.activities[0].name, avatarURL: client.user.avatarURL() });
+  });
 
-  //app.listen(port, () =>
-  //  console.log(`Example app listening at http://localhost:${port}\n\n`)
-  //);
+  app.listen(process.env.PORT || 5000, () =>
+    console.log(`Example app listening at http://localhost:${port}\n\n`)
+  );
 
   let commands;
   commands = client.application?.commands;
