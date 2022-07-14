@@ -8,7 +8,7 @@ const { ContextMenuCommandBuilder } = require('@discordjs/builders');
 const translate = require("@vitalets/google-translate-api"); // importing translation package
 const wait = require("node:timers/promises").setTimeout; // importing 'node timeout'
 const languageName = require("./functions/languageName"); // importing 'languageName' function
-const token = process.env["token"]; // importing bot token from secret keys
+const token = process.env.TOKEN; // importing bot token from secret keys
 
 const client = new DiscordJS.Client({
   intents: 84992,
