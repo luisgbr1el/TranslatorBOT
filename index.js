@@ -35,19 +35,8 @@ client.on("ready", () => {
     console.log(`Example app listening at http://localhost:${port}\n\n`)
   );
 
-  // guild
-  //BOTS BETA ID
-  const guildId = "777005017474793472";
-
-  const guild = client.guilds.cache.get(guildId);
-
-  //let commands;
-
-  //if (guild) {
-  commands = guild.commands;
-  //} else {
-  //commands = client.application?.commands;
-  //}
+  let commands;
+  commands = client.application?.commands;
 
   commands?.create({
     name: "help",
@@ -109,34 +98,6 @@ client.on("ready", () => {
   });
 
 });
-
-//const modal = new Modal() // We create a Modal
-  //.setCustomId("helpModal")
-  //.setTitle("Feedback")
-  //.addComponents(
-    //new TextInputComponent() // We create a Text Input Component
-      //.setCustomId("country")
-      //.setLabel("Which country are you from?")
-      //.setStyle("SHORT") //IMPORTANT: Text Input Component Style can be 'SHORT' or 'LONG'
-      //.setPlaceholder("Write your country here")
-      //.setRequired(true), // If it's required or not
-
-    //new TextInputComponent() // We create a Text Input Component
-      //.setCustomId("text")
-      //.setLabel("Text")
-      //.setStyle("LONG") //IMPORTANT: Text Input Component Style can be 'SHORT' or 'LONG'
-      //.setPlaceholder("Write a feedback about Translator")
-      //.setRequired(true) // If it's required or not
-  //);
-
-//client.on("modalSubmit", async (modal) => {
-  //if (modal.customId === "helpModal") {
-    //const nameResponse = modal.getTextInputValue("country");
-    //const themeResponse = modal.getTextInputValue("text");
-    //modal.reply(`Thank you for the feedback!\nSo, you are **${nameResponse}** and you like the **${themeResponse}** theme. Awesome!`
-    //);
-  //}
-//});
 
 // when an user request an interaction (button click, slash command, modal submit, etc.)
 client.on("interactionCreate", async (interaction) => {
