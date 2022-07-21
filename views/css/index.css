@@ -1,36 +1,105 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
   
-    body {
-      font-family: 'Ubuntu', sans-serif;
-      background-color: #303136;
-      color: #fdfdfe;
-      text-align: center;
-    }
-  
-    hr {
-      width: 30%;
-    }
-  
-    img {
-      border-radius: 50%;
-      border: 2px solid rgb(220,220,220);
-    }
-  
-    a {
-      color: rgb(220,220,220);
-    }
-  
-    @media screen and (max-width: 600px) {
-      body {
-          margin: 10px;
-      }
-      
-      hr {
-        width: 95%;
-      }
-  
-      div#code {
-          width: 80%;
-      }
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #23242a;
+  color: #fdfdfe;
+  margin: 0;
+  padding: 0;
+}
 
-  }
+.tab {
+  background-color: #1a1b1e;
+  padding: 10px 20px 10px 20px;
+  text-align: left;
+}
+
+div#title {
+  margin-top: 30px;
+  font-size: 20pt;
+  text-align: center;
+}
+
+div#pfp {
+  text-align: center;
+  width: 30%;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+}
+
+div#status {
+  position: relative;
+  background-color: #1a1b1e;
+  border-radius: 5px;
+  width: 85px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1px;
+}
+
+span.dot {
+  height: 10px;
+  width: 10px;
+  background-color: #109e33;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+p#status {
+  display: inline-block;
+  margin-left: 5px;
+  font-weight: bold;
+}
+
+div#infos {
+  display: inline-block;
+  width: 70%;
+  padding: 0;
+  margin: 0;
+  top: 50%;
+  position: relative;
+  transform: translateY(-50%);
+}
+
+div#infos span {
+  font-weight: bold;
+  font-size: 14pt;
+}
+
+div#infos div {
+  width: 50%;
+  display: inline-block;
+}
+
+div#infos p {
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+hr {
+  width: 30%;
+}
+
+img#logo {
+  border-radius: 50%;
+  width: 50px;
+  display: inline-block;
+}
+
+img#pfp {
+  margin-top: 20px;
+  border-radius: 50%;
+  border: 2px solid #109e33;
+}
+  
+a {
+  color: rgb(220,220,220);
+}
+  
+@media screen and (max-width: 600px) {
+
+}
