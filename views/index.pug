@@ -19,6 +19,9 @@ html(lang="en")
         span(class='dot')
         p(id='status')
           != "ONLINE"
+      br/
+      div
+        a(id='invite', href='https://discord.com/oauth2/authorize?client_id=745021822361141278&permissions=84992&scope=bot', target="_blank") Invite bot
 
     div(id="infos")
       div
@@ -38,7 +41,7 @@ html(lang="en")
         span(id="actType") Activity
         p
           != actType
-
+      br/
       div
         span(id="commands") Commands
         p
