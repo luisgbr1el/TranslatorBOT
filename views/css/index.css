@@ -15,9 +15,10 @@ body {
 }
 
 div#title {
-  margin-top: 30px;
+  margin-top: 3%;
   font-size: 20pt;
   text-align: center;
+  margin-bottom: 50px;
 }
 
 div#pfp {
@@ -25,6 +26,10 @@ div#pfp {
   width: 30%;
   padding: 0;
   margin: 0;
+  position: relative;
+  float: left;
+  margin-top: 8%;
+  transform: translateY(-50%);
   display: inline-block;
 }
 
@@ -57,7 +62,8 @@ div#infos {
   width: 70%;
   padding: 0;
   margin: 0;
-  top: 50%;
+  float: right;
+  margin-top: 10%;
   position: relative;
   transform: translateY(-50%);
 }
@@ -69,6 +75,7 @@ div#infos span {
 
 div#infos div {
   width: 50%;
+  margin-bottom: 20px;
   display: inline-block;
 }
 
@@ -99,7 +106,77 @@ img#pfp {
 a {
   color: rgb(220,220,220);
 }
+
+a#invite {
+  background-color: #5865f2;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  padding: 7px 10px 7px 10px;
+  color: #f1ecfc;
+  transition: 0.2s;
+}
+
+a#invite:hover {
+  background-color: #4a56d9;
+  transition: 0.2s;
+}
   
 @media screen and (max-width: 600px) {
 
+    div#title {
+      margin-top: 30px;
+      font-size: 20pt;
+      margin-bottom: 20px;
+    }
+  
+    img#pfp {
+      width: 50%;
+    }
+  
+    div#pfp {
+      text-align: center;
+      top: 120px;
+      width: 95%;
+      padding: 0;
+      margin: 0;
+      position: relative;
+      display: inline-block;
+    }
+
+    div#infos {
+      width: 100%;
+      top: 220px;
+    }
+
+    div#infos span {
+      font-weight: bold;
+      font-size: 20pt;
+    }
+  
+    div#infos div {
+      padding-left: 20px;
+      font-size: 17pt;
+      width: 80%;
+      display: inline-block;
+    }
+
+    div#status {
+      width: 100px;
+      padding: 0 5px 0 5px;
+    }
+  
+    div#status p {
+      font-size: 18pt;
+    }
+
+    span.dot {
+      height: 14px;
+      width: 14px;
+      background-color: #109e33;
+    }
+
+    a#invite {
+      font-size: 18pt;
+    }
 }
