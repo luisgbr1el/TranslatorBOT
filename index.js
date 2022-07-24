@@ -7,6 +7,7 @@ const { ContextMenuCommandBuilder } = require('@discordjs/builders');
 const translate = require("@vitalets/google-translate-api"); // importing translation package
 const wait = require("node:timers/promises").setTimeout; // importing 'node timeout'
 const languageName = require("./functions/languageName"); // importing 'languageName' function
+const commandsList = require('./functions/commands'); // importing commands list
 const token = process.env.TOKEN; // importing bot token from secret keys
 
 const client = new DiscordJS.Client({
@@ -27,7 +28,7 @@ client.on("ready", () => {
   });
 
   app.get("/", function(req, res) {
-    res.render('index.pug', { username: client.user.username, guilds: guilds.length, channels: client.channels.cache.size, botId: client.user.id, actType: activity.activities[0].type, actName: activity.activities[0].name, avatarURL: client.user.avatarURL() });
+    res.render('index.pug', { username: client.user.username, guilds: guilds.length, channels: client.channels.cache.size, botId: client.user.id, actType: activity.activities[0].type, actName: activity.activities[0].name, avatarURL: client.user.avatarURL(), commands: commandsList });
   });
 
   app.listen(process.env.PORT || 5000, () =>
