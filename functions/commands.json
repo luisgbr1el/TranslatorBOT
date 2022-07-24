@@ -1,0 +1,14 @@
+[
+  {
+    "name": "/translate",
+    "description": "Translate a text from a language to other."
+  },
+  {
+    "name": "/t",
+    "description": "Auto translate text to a language."
+  },
+  {
+    "name": "/help",
+    "description": "View infos about Translator."
+  }
+]
