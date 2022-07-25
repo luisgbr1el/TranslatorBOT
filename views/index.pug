@@ -25,24 +25,24 @@ html(lang="en")
 
     div(id="infos")
       div
-        span(id="guilds") Guilds 
+        div(id="guilds") Guilds 
         p
           != guilds
       div
-        span(id="channels") Channels
+        div(id="channels") Channels
         p
           != channels
       br/
       div
-        span(id="botId") Bot ID
+        div(id="botId") Bot ID
         p
           != botId
       div
-        span(id="actType") Activity
+        div(id="actType") Activity
         p
           != actType
       br/
       div
-        span(id="commands") Commands
+        div(id="commands") Commands
         p
           != commands[0].name + "<br>" + commands[1].name + "<br>" + commands[2].name
