@@ -68,7 +68,7 @@ div#infos {
   transform: translateY(-50%);
 }
 
-div#infos span {
+div#infos div div {
   font-weight: bold;
   font-size: 14pt;
 }
@@ -137,7 +137,7 @@ a#invite:hover {
     div#pfp {
       text-align: center;
       top: 120px;
-      width: 95%;
+      width: 100%;
       padding: 0;
       margin: 0;
       position: relative;
@@ -149,15 +149,26 @@ a#invite:hover {
       top: 220px;
     }
 
-    div#infos span {
+    div#infos div div {
       font-weight: bold;
       font-size: 15pt;
+      width: 100%;
+      margin: 0;
+      padding: 10px 0 10px 0;
+      background: linear-gradient(to right, #23242a, #1a1b1e, #23242a);
+      text-align: center;
+    }
+
+    div#infos div p {
+      text-align: center;
     }
   
     div#infos div {
-      padding-left: 20px;
+      left: 50%;
+      position: relative;
+      transform: translateX(-50%);
       font-size: 14pt;
-      width: 80%;
+      width: 100%;
       display: inline-block;
     }
 
