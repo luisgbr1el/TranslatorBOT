@@ -151,23 +151,24 @@ a#invite:hover {
 
     div#infos span {
       font-weight: bold;
-      font-size: 20pt;
+      font-size: 15pt;
     }
   
     div#infos div {
       padding-left: 20px;
-      font-size: 17pt;
+      font-size: 14pt;
       width: 80%;
       display: inline-block;
     }
 
     div#status {
+      margin-top: 10px;
       width: 100px;
       padding: 0 5px 0 5px;
     }
   
     div#status p {
-      font-size: 18pt;
+      font-size: 16pt;
     }
 
     span.dot {
@@ -177,6 +178,6 @@ a#invite:hover {
     }
 
     a#invite {
-      font-size: 18pt;
+      font-size: 15pt;
     }
 }
