@@ -1,17 +1,17 @@
-const express = require("express"); // importing 'express' package to render a web panel
-const app = express();
+const express = require("express"), // importing 'express' package to render a web panel
+      app = express();
 
-const DiscordJS = require("discord.js"); // importing 'discord.js' package
-const { MessageEmbed, MessageActionRow, MessageButton, MessageSelectMenu, MessageAttachment } = require("discord.js"); // importing classes from 'discord.js'
-const { ContextMenuCommandBuilder } = require('@discordjs/builders');
-const translate = require("@vitalets/google-translate-api"); // importing translation package
-const wait = require("node:timers/promises").setTimeout; // importing 'node timeout'
-const languageName = require("./functions/languageName"); // importing 'languageName' function
-const commandsList = require('./functions/commands'); // importing commands list
-const token = process.env.TOKEN; // importing bot token from secret keys
+const DiscordJS = require("discord.js"), // importing 'discord.js' package
+      { MessageEmbed, MessageActionRow, MessageButton, MessageSelectMenu, MessageAttachment } = require("discord.js"), // importing classes from 'discord.js'
+      { ContextMenuCommandBuilder } = require('@discordjs/builders'),
+      translate = require("@vitalets/google-translate-api"), // importing translation package
+      wait = require("node:timers/promises").setTimeout, // importing 'node timeout'
+      languageName = require("./functions/languageName"), // importing 'languageName' function
+      commandsList = require('./functions/commands'), // importing commands list
+      token = process.env.TOKEN; // importing bot token from secret keys
 
 const client = new DiscordJS.Client({
-  intents: 84992,
+   intents: 84992,
 }); // declaring bot intents
 
 const discordModals = require("discord-modals");
@@ -42,11 +42,6 @@ client.on("ready", () => {
     name: "help",
     description: "View infos about Translator.",
   });
-
-  //commands?.create({
-    //name: "feedback",
-    //description: "Give a feedback about Translator.",
-  //});
 
   commands?.create({
     name: "translate",
