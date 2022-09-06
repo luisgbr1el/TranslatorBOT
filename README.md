@@ -31,8 +31,9 @@ We use emojis on commits names to represent what we did. So below is a table wit
 View below bot commands and how to use each one.
 |Command|Type|Description|Example|
 |-|-|-|-|
-|`/translate`|Slash command|Translate text from a language to another.|`/translate en es Hey there!`|
-|`/t`|Slash command|Auto translate text to a language.|`/t es Hey there!`|
+|`/translate`|Slash command|Translate text from a language to another.|`/translate <from:en> <to:pt> <text:Hey there!>`|
+|`/t`|Slash command|Auto translate text to a language.|`/t <to:en> <text:Bom dia!>`|
+|`/convert`|Slash command|Convert values/texts to various formats.|`/convert <type:Convert to> <format:Roman numeral> <content:13>`|
 |`/help`|Slash command|View bot guide and info.|`/help`|
 |`Translate message`|Message Context Menu|Translate any message.|Right-click on a message > Apps > Translate message|
 
