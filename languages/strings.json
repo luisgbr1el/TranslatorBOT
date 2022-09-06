@@ -1,0 +1,110 @@
+{
+  "info": {
+    "aboutTranslator": {
+      "en": "Hey there! I can translate everything you request.\nView more in my profile's **about me** section.\n\n**<:blurple_slashcommands:1012567141393891408>  PS:** Since <t:1661929200:D>, **prefix commands** was deprecated. Please, use **slash commands `/`** instead.\n\nDeveloped by [luisgbr1el](https://github.com/luisgbr1el)",
+      "pt": "Olá! Eu posso traduzir tudo que você pedir.\nVeja mais na seção **sobre mim** do meu perfil.\n\n**<:blurple_slashcommands:1012567141393891408> OBS:** Desde <t:1661929200:D>, os **comandos por prefixo** foram descontinuados. Por favor, ao invés disso, use os **comandos por barra `/`**.\n\nDesenvolvido por [luisgbr1el](https://github.com/luisgbr1el)"
+    },
+    "guideDescription": {
+      "en": "**Translator**'s commands guide.\nAll ISO codes are available on bot website.",
+      "pt": "Guia de comandos do **Translator**.\nTodos os códigos ISO estão disponíveis no site do bot."
+    },
+    "github": {
+      "en": "Click on button below to visit my **GitHub** repository and give a star or contribute with my code. **Pull Requests** are always welcome. ⭐",
+      "pt": "Clique no botão abaixo para visitar meu repositório no **GitHub** e dar uma estrela ou contribuir com meu código. **Pull Requests** são sempre bem-vindos. ⭐"
+    },
+    "crowdin": {
+      "en": "You can help us on translations to ease the bot using to everyone! Contribute with our **Crowdin** project clicking on button below.",
+      "pt": "Você pode nos ajudar nas traduções para facilitar o uso do bot para todos! Contribua com nosso projeto no **Crowdin** clicando no botão abaixo."
+    },
+    "from": {
+      "en": "From",
+      "pt": "De"
+    },
+    "to": {
+      "en": "To",
+      "pt": "Para"
+    }
+  },
+  "title": {
+    "commandsEmbed": {
+      "en": "Commands",
+      "pt": "Comandos"
+    }
+  },
+  "command": {
+    "translate": {
+      "en": "You can translate from a language to another with this command.\n**Example:**\n`/translate <from:en> <to:pt> <text:Hey there!>`\n\nIt will return `Olá!`.",
+      "pt": "Você pode traduzir de um idioma para outro com esse comando.\n**Exemplo:**\n`/translate <from:en> <to:pt> <text:Hey there!>`\n\nO bot irá retornar `Olá!`."
+    },
+    "t": {
+      "en": "This command is a quick version of **/translate**. You don't need to specify what's the language you're providing, the bot will try to identify it.\n**Example:**\n`/t <to:en> <text:Bom dia!>`\n\nIt will detect **Portuguese** and return `Good morning!`.",
+      "pt": "Esse comando é uma versão rápida do **/translate**. Você não precisa especificar qual linguagem está fornecendo, o bot irá tentar identificá-la.\n**Exemplo:**\n`/t <to:en> <text:Bom dia!>`\n\nO bot detectará **Português** e retornará `Good morning!`."
+    },
+    "convert": {
+      "en": "You can **convert** or **decovert** a value/text to another. You can select what you want to do.\n**Example:**\n`/convert <type:Convert to> <format:Roman numeral> <content:13>`\n\nIt will return `XIII`.",
+      "pt": "Você pode **converter** ou **desconverter** um valor/texto para outro. Você pode selecionar o que deseja fazer.\n**Exemplo:**\n`/convert <type:Convert to> <format:Roman numeral> <content:13>`\n\nO bot irá retornar `XVIII`."
+    }
+  },
+  "button": {
+    "github": {
+      "en": "GitHub repository",
+      "pt": "Repositório no GitHub"
+    },
+    "crowdin": {
+      "en": "Crowdin project",
+      "pt": "Projeto no Crowdin"
+    },
+    "iso": {
+      "en": "ISO Codes",
+      "pt": "Códigos ISO"
+    },
+    "website": {
+      "en": "Visit website",
+      "pt": "Visite o site"
+    }
+  },
+  "action": {
+    "detectedLanguage": {
+      "en": "Detected language:",
+      "pt": "Idioma detectado:"
+    },
+    "translatingTo": {
+      "en": "Translating to",
+      "pt": "Traduzindo para"
+    },
+    "isTranslating": {
+      "en": "is translating...",
+      "pt": "está traduzindo..."
+    }
+  },
+  "menu": {
+    "selectOption": {
+      "en": "Select an option",
+      "pt": "Selecione uma opção"
+    },
+    "help": {
+      "myCommands": {
+        "label": {
+          "en": "My commands",
+          "pt": "Meus comandos"
+        },
+        "description": {
+          "en": "View infos about my commands.",
+          "pt": "Veja informações sobre meus comandos."
+        }
+      },
+      "myInfo": {
+        "label": {
+          "en": "My infos",
+          "pt": "Minhas informações"
+        },
+        "description": {
+          "en": "View infos about me.",
+          "pt": "Veja informações sobre mim."
+        }
+      }
+    }
+  },
+  "error": {
+  }
+}
