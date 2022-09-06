@@ -10,5 +10,9 @@
   {
     "name": "/help",
     "description": "View infos about Translator."
+  },
+  {
+    "name": "/convert",
+    "description": "Convert values/texts to various formats."
   }
 ]
