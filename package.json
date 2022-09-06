@@ -1,21 +1,34 @@
 {
   "name": "TranslatorBOT",
-  "version": "2.0.0",
+  "version": "2.5.0",
   "description": "A Discord bot that translates everything you type.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
   },
-  "keywords": ["translation", "discord", "discord.js", "translate", "discordbot"],
+  "keywords": [
+    "translation",
+    "discord",
+    "discord.js",
+    "translate",
+    "discordbot"
+  ],
   "author": "luisgbr1el",
   "license": "MIT",
   "dependencies": {
     "@discordjs/builders": "^0.15.0",
+    "@stdlib/string-uppercase": "^0.0.9",
     "@vitalets/google-translate-api": "^8.0.0",
+    "canvas": "^2.9.3",
+    "color-to-name": "^1.1.0",
+    "colornames": "^1.1.1",
     "discord-modals": "^1.3.7",
     "discord.js": "^13.8.0",
     "express": "^4.17.3",
-    "pug": "^3.0.2"
+    "extra-number": "^2.2.41",
+    "morse-code-lib": "^1.0.2",
+    "pug": "^3.0.2",
+    "romans": "^2.0.8"
   }
 }
