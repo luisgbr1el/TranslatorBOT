@@ -1,14 +1,14 @@
 # Translator
 
-   <img src="https://cdn.discordapp.com/avatars/745021822361141278/38e8f05ef2b04dd2540de0d90be7c034.png?size=2048" alt="logo-translatorbot" border="0" width="300px" height="300px">
-
+<img src="https://cdn.discordapp.com/avatars/745021822361141278/38e8f05ef2b04dd2540de0d90be7c034.png?size=2048" alt="logo-translatorbot" border="0" width="200px">
 
 [![GitHub forks](https://img.shields.io/github/forks/luisgbr1el/translatorbot?style=for-the-badge)](https://github.com/luisgbr1el/brtwitchtracker-website/network)
 [![GitHub stars](https://img.shields.io/github/stars/luisgbr1el/translatorbot?style=for-the-badge)](https://github.com/luisgbr1el/brtwitchtracker-website/stargazers)
 [![GitHub license](https://img.shields.io/github/license/luisgbr1el/translatorbot?style=for-the-badge)](https://github.com/luisgbr1el/brtwitchtracker-website/blob/main/LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/luisgbr1el/translatorbot?style=for-the-badge)](https://github.com/luisgbr1el/brtwitchtracker-website/issues)
 
-A Discord bot that translates everything you type.
+Hey there! I'm **Translator**. I'm a Discord Bot and I can translate and convert values/texts.
+> Fully compatible with **Slash commands <img src="https://cdn3.emoji.gg/emojis/6243-blurple-slashcommands.png" width="20px">**.
 
 ## Resources
 <img  alt="Luis-Node" src="https://img.shields.io/badge/Node.js-black?style=for-the-badge&logo=node.js&logoColor=white"> <img  alt="Luis-NPM" src="https://img.shields.io/badge/NPM-black?style=for-the-badge&logo=npm&logoColor=white"> <img  alt="Luis-JS" src="https://img.shields.io/badge/JavaScript-black?style=for-the-badge&logo=javascript&logoColor=white">
