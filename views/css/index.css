@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
   
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #23242a;
+  background-color: #2C2F33;
   color: #767D86;
   margin: 0;
   padding: 0;
@@ -35,17 +35,17 @@ div#pfp {
 
 div#status {
   position: relative;
-  background-color: #1a1b1e;
+  background-color: #252729;
   border-radius: 5px;
+  padding: 5px 7px 5px 7px;
   width: 85px;
   left: 50%;
   transform: translateX(-50%);
-  padding: 1px;
 }
 
 span.dot {
-  height: 10px;
-  width: 10px;
+  height: 7px;
+  width: 7px;
   background-color: #109e33;
   border-radius: 50%;
   display: inline-block;
@@ -126,9 +126,20 @@ div#infos div div {
   color: #767D86;
   font-weight: bold;
 }
+
+.command {
+  font-weight: bolder;
+  padding: 5px 6px 5px 6px;
+  background-color: #595F66;
+  color: #313539;
+  border-radius: 3px;
+  position: relative;
+  margin-right: 5px;
+  width: auto;
+  display: inline-block;
+}
   
 @media screen and (max-width: 600px) {
-
     div#title {
       margin-top: 30px;
       font-size: 20pt;
@@ -154,18 +165,28 @@ div#infos div div {
       top: 220px;
     }
 
-    div#infos div div {
-      font-weight: bold;
-      font-size: 15pt;
+    div#infos div {
       width: 100%;
+      padding-bottom: 20px;
       margin: 0;
-      padding: 10px 0 10px 0;
-      background: linear-gradient(to right, #23242a, #1a1b1e, #23242a);
+      text-align: left;
+      position: relative;
+    }
+
+    div#infos div div {
+      font-weight: 400px;
+      font-size: 15pt;
+      width: auto;
+      padding: 5px 6px 5px 6px;
+      margin-bottom: 10px;
+      border-radius: 3px;
+      background-color: #252729;
       text-align: center;
     }
 
-    div#infos div p {
-      text-align: center;
+    div#infos div p.text {
+      text-align: left;
+      padding-left: 30px;
     }
   
     div#infos div {
@@ -180,7 +201,7 @@ div#infos div div {
     div#status {
       margin-top: 10px;
       width: 100px;
-      padding: 0 5px 0 5px;
+      padding: 5px 7px 5px 7px;
     }
   
     div#status p {
@@ -195,5 +216,9 @@ div#infos div div {
 
     a#invite {
       font-size: 15pt;
+    }
+    
+    div#infos div span {
+      padding-left: 30px;
     }
 }
