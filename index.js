@@ -32,8 +32,11 @@ client.on("ready", () => {
     type: "LISTENING",
   });
   
+  avatar = client.user.avatarURL();
+  avatarr = avatar.replace(".webp", ".png")
+	
   app.get("/", function(req, res) {
-    res.render('index.pug', { username: client.user.username, guilds: guilds.length, channels: client.channels.cache.size, botId: client.user.id, actType: activity.activities[0].type, actName: activity.activities[0].name, avatarURL: client.user.avatarURL(), commands: commandsList });
+    res.render('index.pug', { username: client.user.username, guilds: guilds.length, channels: client.channels.cache.size, botId: client.user.id, actType: activity.activities[0].type, actName: activity.activities[0].name, avatarURL: avatarr, commands: commandsList });
   });
 
   app.listen(process.env.PORT || 5000, () =>
