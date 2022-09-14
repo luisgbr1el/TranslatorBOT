@@ -1,18 +1,18 @@
 [
   {
-    "name": "/translate",
+    "name": "translate",
     "description": "Translate a text from a language to other."
   },
   {
-    "name": "/t",
+    "name": "t",
     "description": "Auto translate text to a language."
   },
   {
-    "name": "/help",
+    "name": "help",
     "description": "View infos about Translator."
   },
   {
-    "name": "/convert",
+    "name": "convert",
     "description": "Convert values/texts to various formats."
   }
 ]
