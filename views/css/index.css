@@ -137,6 +137,7 @@ div#infos div div {
   margin-right: 5px;
   width: auto;
   display: inline-block;
+  cursor: pointer;
 }
   
 @media screen and (max-width: 600px) {

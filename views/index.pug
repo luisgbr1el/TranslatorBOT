@@ -50,4 +50,7 @@ html(lang="en")
         br/
         span
           each val in commands
-            p(class="command")= val.name
+            p(class="command", onclick="showDetailsPopup('" + val.name +"','" + val.description + "')")= '/' + val.name
+            div(class="detailsPopup" id=val.name, style="display: none;")= val.description
+  script
+    include scripts/popup.js
