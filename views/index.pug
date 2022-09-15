@@ -9,6 +9,9 @@ html(lang="en")
       != 'Panel ' + username + ' Bot'
     style
       include css/index.css
+      include css/responsivity.css
+
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css", integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==", crossorigin="anonymous", referrerpolicy="no-referrer")
   body
     div(class='tab')
       img(width="150px", src=avatarURL + "?size=512", id="logo")
@@ -50,7 +53,14 @@ html(lang="en")
         br/
         span
           each val in commands
-            p(class="command", onclick="showDetailsPopup('" + val.name +"','" + val.description + "')")= "/" + val.name
-            div(class="detailsPopup" id=val.name, style="display: none;")= val.description
+            p(class="command", onclick="showDetailsPopup('" + val.name +"','" + val.description + "')")= '/' + val.name
+    each val in commands
+      div(class="modal", id="modal" + val.name, style="display: none;")
+        div(class="contentModal", id="content" + val.name)
+          div(class="detailsPopup" id=val.name)
+            h2= '/' + val.name
+            p=val.description
+            button(class="close" id="close" + val.name, onclick="closeModal('" + val.name + "')")
+              i(class="fa-solid fa-xmark")
   script
     include scripts/popup.js
