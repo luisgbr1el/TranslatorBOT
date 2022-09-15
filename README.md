@@ -10,6 +10,9 @@
 Hey there! I'm **Translator**. I'm a Discord Bot and I can translate and convert values/texts.
 > Fully compatible with **Slash commands <img src="https://cdn3.emoji.gg/emojis/6243-blurple-slashcommands.png" width="20px">**.
 
+- [Website](https://translatorbot.gitbook.io)
+- [Dashboard](https://translatorgg.herokuapp.com)
+
 ## Resources
 <img  alt="Luis-Node" src="https://img.shields.io/badge/Node.js-black?style=for-the-badge&logo=node.js&logoColor=white"> <img  alt="Luis-NPM" src="https://img.shields.io/badge/NPM-black?style=for-the-badge&logo=npm&logoColor=white"> <img  alt="Luis-JS" src="https://img.shields.io/badge/JavaScript-black?style=for-the-badge&logo=javascript&logoColor=white">
 
