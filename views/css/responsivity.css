@@ -1,0 +1,93 @@
+@media screen and (max-width: 600px) {
+    div#title {
+      margin-top: 30px;
+      font-size: 20pt;
+      margin-bottom: 20px;
+    }
+  
+    img#pfp {
+      width: 50%;
+    }
+  
+    div#pfp {
+      text-align: center;
+      top: 120px;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      position: relative;
+      display: inline-block;
+    }
+
+    div#infos {
+      width: 100%;
+      top: 220px;
+    }
+
+    div#infos div {
+      width: 100%;
+      padding-bottom: 20px;
+      margin: 0;
+      text-align: left;
+      position: relative;
+    }
+
+    div#infos div div {
+      font-weight: 400px;
+      font-size: 15pt;
+      width: auto;
+      padding: 5px 6px 5px 6px;
+      margin-bottom: 10px;
+      border-radius: 3px;
+      background-color: #252729;
+      text-align: center;
+    }
+
+    div#infos div p.text {
+      text-align: left;
+      padding-left: 30px;
+    }
+  
+    div#infos div {
+      left: 50%;
+      position: relative;
+      transform: translateX(-50%);
+      font-size: 14pt;
+      width: 100%;
+      display: inline-block;
+    }
+
+    div#status {
+      margin-top: 10px;
+      width: 100px;
+      padding: 5px 7px 5px 7px;
+    }
+  
+    div#status p {
+      font-size: 16pt;
+    }
+
+    span.dot {
+      height: 14px;
+      width: 14px;
+      background-color: #109e33;
+    }
+
+    a#invite {
+      font-size: 15pt;
+    }
+    
+    div#infos div span {
+      padding-left: 30px;
+    }
+    
+    div.contentModal {
+      width: 80%;
+      top: 30%;
+    }
+
+    button.close {
+      top: 15%;
+      left: 85%;
+    }
+}
