@@ -139,87 +139,45 @@ div#infos div div {
   display: inline-block;
   cursor: pointer;
 }
-  
-@media screen and (max-width: 600px) {
-    div#title {
-      margin-top: 30px;
-      font-size: 20pt;
-      margin-bottom: 20px;
-    }
-  
-    img#pfp {
-      width: 50%;
-    }
-  
-    div#pfp {
-      text-align: center;
-      top: 120px;
-      width: 100%;
-      padding: 0;
-      margin: 0;
-      position: relative;
-      display: inline-block;
-    }
 
-    div#infos {
-      width: 100%;
-      top: 220px;
-    }
+button.close {
+  color: #767D86;
+  background-color: transparent;
+  /* border: 2px solid #767D86 !important;
+  border-radius: 50%; */
+  border: none;
+  font-size: 20pt !important;
+  font-weight: bolder;
+  position: absolute;
+  left: 90%;
+  top: 20%;
+  cursor: pointer;
+}
 
-    div#infos div {
-      width: 100%;
-      padding-bottom: 20px;
-      margin: 0;
-      text-align: left;
-      position: relative;
-    }
+div.modal {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%;
+  overflow: auto; /* Enable scroll if needed */
+  /* background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.2); /* Black w/ opacity */
+}
 
-    div#infos div div {
-      font-weight: 400px;
-      font-size: 15pt;
-      width: auto;
-      padding: 5px 6px 5px 6px;
-      margin-bottom: 10px;
-      border-radius: 3px;
-      background-color: #252729;
-      text-align: center;
-    }
-
-    div#infos div p.text {
-      text-align: left;
-      padding-left: 30px;
-    }
-  
-    div#infos div {
-      left: 50%;
-      position: relative;
-      transform: translateX(-50%);
-      font-size: 14pt;
-      width: 100%;
-      display: inline-block;
-    }
-
-    div#status {
-      margin-top: 10px;
-      width: 100px;
-      padding: 5px 7px 5px 7px;
-    }
-  
-    div#status p {
-      font-size: 16pt;
-    }
-
-    span.dot {
-      height: 14px;
-      width: 14px;
-      background-color: #109e33;
-    }
-
-    a#invite {
-      font-size: 15pt;
-    }
-    
-    div#infos div span {
-      padding-left: 30px;
-    }
+div.contentModal {
+  margin: 0;
+  position: fixed;
+  font-weight: normal;
+  overflow: auto;
+  font-size: 13pt;
+  padding: 5px 20px 10px 20px;
+  background-color: #2C2F33;
+  left: 50%;
+  top: 30%;
+  text-align: left;
+  width: 30%;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
 }
