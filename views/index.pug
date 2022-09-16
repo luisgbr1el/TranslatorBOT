@@ -53,13 +53,17 @@ html(lang="en")
         br/
         span
           each val in commands
-            p(class="command", onclick="showDetailsPopup('" + val.name +"','" + val.description + "')")= '/' + val.name
+            button(class="command", onclick="showDetailsPopup('" + val.name +"','" + val.description + "')")= '/' + val.name
     each val in commands
       div(class="modal", id="modal" + val.name, style="display: none;")
         div(class="contentModal", id="content" + val.name)
           div(class="detailsPopup" id=val.name)
             h2= '/' + val.name
-            p=val.description
+            div(id="infosCommand")
+                  div
+                    div(id="guilds") Description
+                    p(class="text")
+                      !=val.description
             button(class="close" id="close" + val.name, onclick="closeModal('" + val.name + "')")
               i(class="fa-solid fa-xmark")
   script

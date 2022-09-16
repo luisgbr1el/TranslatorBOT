@@ -32,17 +32,6 @@
       position: relative;
     }
 
-    div#infos div div {
-      font-weight: 400px;
-      font-size: 15pt;
-      width: auto;
-      padding: 5px 6px 5px 6px;
-      margin-bottom: 10px;
-      border-radius: 3px;
-      background-color: #252729;
-      text-align: center;
-    }
-
     div#infos div p.text {
       text-align: left;
       padding-left: 30px;
@@ -87,7 +76,8 @@
     }
 
     button.close {
-      top: 15%;
+      top: 14%;
       left: 85%;
     }
+
 }
