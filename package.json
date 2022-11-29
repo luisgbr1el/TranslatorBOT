@@ -20,7 +20,7 @@
     "@discordjs/builders": "^0.15.0",
     "@stdlib/string-uppercase": "^0.0.9",
     "@vitalets/google-translate-api": "^8.0.0",
-    "canvas": "^2.9.3",
+    "canvas": "^2.6.1",
     "color-to-name": "^1.1.0",
     "colornames": "^1.1.1",
     "discord-modals": "^1.3.7",
