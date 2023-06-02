@@ -9,7 +9,7 @@ const DiscordJS = require("discord.js"), // importing 'discord.js' package
       languageName = require("./functions/languageName"), // importing 'languageName' function
       commandsList = require('./languages/commands'), // importing commands list
       strings = require('./languages/strings'), // importing strings
-      token = process.env['token'], // importing bot token from secret keys
+      token = process.env['token'] || process.env.TOKEN, // importing bot token from secret keys
       convert = require('./functions/convert');
 
 const client = new DiscordJS.Client({
@@ -46,6 +46,8 @@ client.on("ready", () => {
   commands = client.application?.commands;
 	
 });
+
+module.exports = app;
 
 // when an user request an interaction (button click, slash command, modal submit, etc.)
 client.on("interactionCreate", async (interaction) => {
