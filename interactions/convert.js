@@ -1,6 +1,5 @@
 const { MessageAttachment } = require("discord.js"),
   strings = require("../languages/strings"),
-  translate = require("@vitalets/google-translate-api"),
   languageName = require("../functions/languageName"),
   convert = require("../functions/convert"),
   { createCanvas } = require("canvas");
