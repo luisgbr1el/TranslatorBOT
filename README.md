@@ -1,6 +1,6 @@
 # Translator
 
-<img src="https://cdn.discordapp.com/avatars/745021822361141278/38e8f05ef2b04dd2540de0d90be7c034.png?size=2048" alt="logo-translatorbot" border="0" width="200px">
+<img src="https://cdn.discordapp.com/avatars/745021822361141278/a9cb162b2aede254ed53484f40c1ba42.png?size=2048" alt="logo-translatorbot" border="0" width="200px">
 
 [![GitHub forks](https://img.shields.io/github/forks/luisgbr1el/translatorbot?style=for-the-badge)](https://github.com/luisgbr1el/brtwitchtracker-website/network)
 [![GitHub stars](https://img.shields.io/github/stars/luisgbr1el/translatorbot?style=for-the-badge)](https://github.com/luisgbr1el/brtwitchtracker-website/stargazers)
