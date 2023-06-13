@@ -12,6 +12,7 @@ const DiscordJS = require("discord.js"), // importing 'discord.js' package
   { ContextMenuCommandBuilder } = require("@discordjs/builders"),
   wait = require("node:timers/promises").setTimeout, // importing 'node timeout'
   languageName = require("./functions/languageName"), // importing 'languageName' function
+  getGuildLocale = require("./functions/getGuildLocale"),
   commandsList = require("./languages/commands"), // importing commands list
   strings = require("./languages/strings"), // importing strings
   token = process.env["token"] || process.env.TOKEN, // importing bot token from secret keys
@@ -71,11 +72,7 @@ module.exports = app;
 
 // when an user request an interaction (button click, slash command, modal submit, etc.)
 client.on("interactionCreate", async (interaction) => {
-  guildLocale = interaction.guildLocale;
-  let lang;
-
-  if (guildLocale == "pt-BR") lang = "pt";
-  else lang = "en";
+  let lang = getGuildLocale(interaction);
 
   fs.readdir("./interactions/", (err, files) => {
     if (err) console.error(err);
