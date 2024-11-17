@@ -28,7 +28,7 @@
     "express": "^4.21.1",
     "extra-number": "^2.2.41",
     "morse-code-lib": "^1.0.2",
-    "pug": "^3.0.2",
+    "pug": "^3.0.3",
     "romans": "^2.0.8"
   }
 }
