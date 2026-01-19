@@ -1,6 +1,6 @@
 const { MessageEmbed } = require("discord.js"),
   strings = require("../languages/strings"),
-  translate = require("@vitalets/google-translate-api"),
+  { translate } = require("@vitalets/google-translate-api"),
   languageName = require("../functions/languageName");
 
 exports.run = async (interaction, options, client, lang) => {
@@ -10,7 +10,7 @@ exports.run = async (interaction, options, client, lang) => {
 
   await interaction.deferReply();
 
-  translate(messageContent, { to: lang })
+  await translate(messageContent, { to: lang })
     .then(async (res) => {
       const embed = new MessageEmbed()
         .setAuthor({
@@ -19,7 +19,7 @@ exports.run = async (interaction, options, client, lang) => {
         })
         .addField(
           strings.action.detectedLanguage[lang],
-          languageName(res.from.language.iso)
+          languageName(res.raw.src)
         )
         .addField(
           `${strings.action.translatingTo[lang]} ${languageName(lang)}...`,

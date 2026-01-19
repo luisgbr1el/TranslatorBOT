@@ -15,8 +15,12 @@ const DiscordJS = require("discord.js"), // importing 'discord.js' package
   getGuildLocale = require("./functions/getGuildLocale"),
   commandsList = require("./languages/commands"), // importing commands list
   strings = require("./languages/strings"), // importing strings
-  token = process.env["token"] || process.env.TOKEN, // importing bot token from secret keys
-  convert = require("./functions/convert");
+  convert = require("./functions/convert"),
+  dotenv = require("dotenv");
+
+dotenv.config();
+
+const token = process.env["token"] || process.env.TOKEN;
 
 const client = new DiscordJS.Client({
   intents: 84992,

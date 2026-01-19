@@ -1,6 +1,6 @@
 const { MessageEmbed } = require("discord.js"),
   strings = require("../languages/strings"),
-  translate = require("@vitalets/google-translate-api"),
+  { translate } = require("@vitalets/google-translate-api"),
   languageName = require("../functions/languageName");
 
 exports.run = async (interaction, options, client, lang) => {
@@ -11,17 +11,17 @@ exports.run = async (interaction, options, client, lang) => {
 
   await interaction.deferReply();
 
-  translate(text, { from: fromLanguage, to: toLanguage })
+  await translate(text, { from: fromLanguage, to: toLanguage })
     .then(async (res) => {
       const translated = new MessageEmbed().setAuthor({
         name: `${interaction.user.username} ${strings.action.isTranslating[lang]}`,
         iconURL: avatarURL,
       });
 
-      if (res.from.text.didYouMean == true) {
+      if (res.text.didYouMean == true) {
         translated.addField(
           `${strings.info.from[lang]} ${languageName(fromLanguage)}:`,
-          "`" + res.from.text.value + "`"
+          "`" + res.text + "`"
         );
       } else {
         translated.addField(
